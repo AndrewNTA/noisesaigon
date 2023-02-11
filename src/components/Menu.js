@@ -1,0 +1,26 @@
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import useStyles from './styles';
+
+function Menu() {
+  const navigate = useNavigate();
+  const classes = useStyles();
+
+  return (
+    <div className={classes.menuWrapper}>
+      <div className={classes.menuLogo} onClick={() => navigate('/')}>
+        <span className={classes.menuLogoHead}>Gig</span>
+        <span className={classes.menuLogoTail}>Music</span>
+      </div>
+      <div className={classes.menuItem} onClick={() => navigate('/gigs')}>
+        Gigs
+      </div>
+      <div className={classes.menuItem}>Reads</div>
+      <div className={classes.menuItem}>Support</div>
+      <div className={classes.menuItem}>Links</div>
+    </div>
+  );
+}
+
+export default Menu;
