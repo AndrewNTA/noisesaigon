@@ -28,6 +28,9 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '0.75rem',
     borderLeft: '2px solid rgb(224 32 32)',
   },
+  aContent: {
+    paddingLeft: '0.75rem',
+  },
   // article end
 
   // menu start
@@ -95,6 +98,7 @@ const useStyles = makeStyles((theme) => ({
   // show start
   showWrapper: {
     marginBottom: '16px',
+    paddingLeft: '0.75rem',
   },
   showName: {
     lineHeight: '1.5rem',
@@ -162,6 +166,41 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   // more button end
+
+  // footer start
+  footerWrapper: {
+    color: 'rgb(229 231 235)',
+    backgroundColor: 'rgb(0 0 0)',
+    padding: '3.5rem 2.5rem',
+    marginTop: '4rem',
+    fontSize: '0.875rem',
+  },
+  footerLogo: {
+    cursor: 'pointer',
+    fontSize: '2.5rem',
+    lineHeight: '1.75rem',
+    fontWeight: 700,
+  },
+  footerLinkGov: {
+    color: 'white',
+    fontWeight: 500,
+    marginLeft: '3px',
+  },
+  footerLink: {
+    cursor: 'pointer',
+    fontSize: '0.875rem',
+    lineHeight: '1.75rem',
+    '&:hover': {
+      textDecorationLine: 'underline',
+    },
+  },
+  footerTitle: {
+    fontSize: '1.5rem',
+    lineHeight: '1.75rem',
+    fontWeight: 500,
+    marginBottom: '2rem',
+  },
+  // footer end
 }));
 
 export default useStyles;

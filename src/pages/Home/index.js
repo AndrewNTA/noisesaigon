@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material';
 import Bg from '../../static/images/bg_1.png';
+import Discord from '../../static/images/discord-logo.svg';
 import {
   InfoBox,
   Spacing,
@@ -8,6 +9,7 @@ import {
   Menu,
   Show,
   MoreButton,
+  Footer,
 } from '../../components';
 import { articles } from '../../mockDatas/article';
 import { shows } from '../../mockDatas/show';
@@ -69,7 +71,50 @@ function Home() {
             </div>
           </Grid>
         </Grid>
+        <Spacing size={64} />
+        <Grid container spacing={4}>
+          <Grid item xs={12} md={6}>
+            <h1 className={classes.title}>WELCOME TO GIGMUSIC!</h1>
+            <div className={classes.content}>
+              <div className={classes.leftSpacing}>
+                <b>
+                  This site exists to promote the community that music creates,
+                  with a local focus on Sydney, Australia.
+                </b>
+              </div>
+              <Spacing size={24} />
+              <div className={classes.leftSpacing}>
+                At its heart is a simple, no-nonsense gig guide that does
+                exactly what it says on the tin. We'll also be publishing the
+                occasional bit of writing, including commentary on cultural
+                trends, music reviews, opinion pieces, and round-ups from
+                contributing writers. We also have a Discord, to help foster
+                connections, again in the hope that it will make it easier to
+                find Sydney's music community and find your place in it.
+              </div>
+              <MoreButton text="read more" />
+            </div>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <h1 className={classes.title}>JOIN OUR DISCORD!</h1>
+            <div className={classes.content}>
+              <div>
+                <b>We have a Discord </b>
+                (online chat server), so we can have a more dynamic and
+                discussion-oriented place for Sydney's music community to meet.
+                It's about as Web 2.0 as it gets around here.
+              </div>
+              <img
+                src={Discord}
+                alt="discord"
+                className={classes.discordLogo}
+              />
+              <MoreButton text="join our discord!" />
+            </div>
+          </Grid>
+        </Grid>
       </div>
+      <Footer />
     </Container>
   );
 }

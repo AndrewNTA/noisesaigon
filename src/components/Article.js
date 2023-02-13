@@ -6,7 +6,7 @@ function Article({ title, content }) {
   return (
     <div className={classes.aWrapper}>
       <h4 className={classes.aTitle}>{title}</h4>
-      <div>{content}</div>
+      <div className={classes.aContent}>{content}</div>
     </div>
   );
 }

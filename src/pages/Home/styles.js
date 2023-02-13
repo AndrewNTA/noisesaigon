@@ -38,10 +38,17 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '6px',
   },
   content: {
-    paddingRight: '7rem',
+    paddingRight: '8rem',
     [theme.breakpoints.down('sm')]: {
       paddingRight: '0',
     },
+  },
+  leftSpacing: {
+    paddingLeft: '0.75rem',
+  },
+  discordLogo: {
+    width: '80%',
+    marginTop: '12px',
   },
 }));
 

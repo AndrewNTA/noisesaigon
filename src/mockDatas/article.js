@@ -16,11 +16,6 @@ const articles = [
     content:
       'In the debut edition of our occasional Q&A feature, Kirsty gives us an intro to the community that Party Dozen came from, some thoughts on what can help our local community thrive more, and the importance of a broken PA in becoming a great performer.',
   },
-  {
-    title: `"This place would not exist without the audience": Nick Shimmin of the People's Republic on creating Sydney's most unique house shows`,
-    content:
-      "13 years. 120 shows. 1 living room. We caught up with Nick Shimmin of the People's Republic to talk about creating an alternative space for artists and audience to enjoy a shared sense of community.",
-  },
 ];
 
 export { articles };
