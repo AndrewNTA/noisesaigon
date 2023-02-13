@@ -201,6 +201,48 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2rem',
   },
   // footer end
+
+  // gig item start
+  giWrapper: {
+    position: 'relative',
+    display: 'flex',
+    alignItems: 'flex-start',
+  },
+  giTime: {
+    position: 'sticky',
+    top: '1.25rem',
+    textTransform: 'uppercase',
+    paddingRight: '2.125rem',
+    paddingLeft: '1.125rem',
+  },
+  giDay: {
+    fontSize: '1.125rem',
+    lineHeight: '1.75rem',
+    fontWeight: 600,
+    color: 'rgb(224 32 32)',
+  },
+  giDate: {
+    fontSize: '2.25rem',
+    lineHeight: '2.5rem',
+    fontWeight: 600,
+    color: 'rgb(0 0 0)',
+  },
+  // gig item end
+
+  // scroll top button start
+  stbWrapper: {
+    position: 'fixed',
+    bottom: '32px',
+    right: '32px',
+    padding: '0.75rem',
+    borderRadius: '12px',
+    backgroundColor: 'rgb(224 32 32)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    cursor: 'pointer',
+  },
+  // scroll top button end
 }));
 
 export default useStyles;

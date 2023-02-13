@@ -5,5 +5,7 @@ import Menu from './Menu';
 import Show from './Show';
 import MoreButton from './MoreButton';
 import Footer from './Footer';
+import GigItem from './GigItem';
+import ScrollTopBtn from './ScrollTopBtn';
 
-export { InfoBox, Spacing, Article, Menu, Show, MoreButton, Footer };
+export { InfoBox, Spacing, Article, Menu, Show, MoreButton, Footer, GigItem, ScrollTopBtn };
