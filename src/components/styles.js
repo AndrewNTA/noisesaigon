@@ -141,6 +141,7 @@ const useStyles = makeStyles((theme) => ({
   showMoreInfoText: {
     lineHeight: '1.25rem',
     fontSize: '0.875rem',
+    color: '#000',
     '&:hover': {
       textDecorationLine: 'underline',
     },
@@ -234,7 +235,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'fixed',
     bottom: '32px',
     right: '32px',
-    padding: '0.75rem',
+    padding: '0.5rem',
     borderRadius: '12px',
     backgroundColor: 'rgb(224 32 32)',
     display: 'flex',

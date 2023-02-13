@@ -14,7 +14,12 @@ function Show({ name, artists, time, location }) {
       </div>
       <div className={classes.showMoreInfo}>
         <InfoIcon fontSize="small" sx={{ marginRight: '4px' }} />
-        <div className={classes.showMoreInfoText}>More info</div>
+        <a
+          href="https://events.humanitix.com/mnc-chris-cody-and-tessie-overmeyer-steve-barry-solo"
+          className={classes.showMoreInfoText}
+        >
+          More info
+        </a>
       </div>
     </div>
   );

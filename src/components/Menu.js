@@ -19,7 +19,9 @@ function Menu() {
         </div>
         <div className={classes.menuItem}>Reads</div>
         <div className={classes.menuItem}>Support</div>
-        <div className={classes.menuItem}>Links</div>
+        <div className={classes.menuItem} onClick={() => navigate('/links')}>
+          Links
+        </div>
       </div>
     </div>
   );
