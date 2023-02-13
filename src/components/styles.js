@@ -17,8 +17,7 @@ const useStyles = makeStyles(() => ({
 
   // article start
   aWrapper: {
-    marginBottom: '4rem',
-    paddingRight: '8rem',
+    marginBottom: '3rem',
   },
   aTitle: {
     lineHeight: '1.25rem',
@@ -67,6 +66,57 @@ const useStyles = makeStyles(() => ({
     color: '#fff',
   },
   // menu end
+
+  // show start
+  showWrapper: {
+    marginBottom: '16px',
+  },
+  showName: {
+    lineHeight: '1.5rem',
+    textTransform: 'uppercase',
+    fontSize: '1.125rem',
+    fontWeight: 700,
+    fontStyle: 'italic',
+  },
+  showArtists: {
+    lineHeight: '1.25rem',
+    textTransform: 'uppercase',
+    fontSize: '0.875rem',
+    fontWeight: 600,
+  },
+  showInfo: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  showTime: {
+    lineHeight: '1.25rem',
+    textTransform: 'uppercase',
+    fontSize: '0.875rem',
+    color: '#7f7f7f',
+    marginRight: '0.75rem',
+    paddingRight: '0.75rem',
+    borderRight: '1px solid #7f7f7f',
+  },
+  showLocation: {
+    lineHeight: '1.25rem',
+    textTransform: 'uppercase',
+    fontSize: '0.875rem',
+    color: '#7f7f7f',
+  },
+  showMoreInfo: {
+    display: 'flex',
+    alignItems: 'center',
+    marginTop: '6px',
+    cursor: 'pointer',
+  },
+  showMoreInfoText: {
+    lineHeight: '1.25rem',
+    fontSize: '0.875rem',
+    '&:hover': {
+      textDecorationLine: 'underline',
+    },
+  },
+  // show end
 }));
 
 export default useStyles;
