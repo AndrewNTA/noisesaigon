@@ -1,6 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   // info box start
   ibWrapper: {
     padding: '1.25rem',
@@ -33,10 +33,19 @@ const useStyles = makeStyles(() => ({
   // menu start
   menuWrapper: {
     display: 'flex',
-    justifyContent: 'space-between',
     alignItems: 'center',
     paddingBottom: '12px',
     paddingTop: '4rem',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+      paddingTop: '12px',
+    },
+  },
+  menuItemGroup: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    flex: 1,
   },
   menuItem: {
     cursor: 'pointer',
@@ -51,11 +60,27 @@ const useStyles = makeStyles(() => ({
       color: 'rgb(224 32 32)',
       borderBottom: '2px solid rgb(224 32 32)',
     },
+    [theme.breakpoints.down('md')]: {
+      padding: '4px 1.25rem',
+      width: '4rem',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '1.125rem',
+      lineHeight: '1.75rem',
+      width: 'unset',
+      padding: '4px 0',
+    },
   },
   menuLogo: {
     fontSize: '2.25rem',
     cursor: 'pointer',
     textTransform: 'uppercase',
+    paddingRight: '4rem',
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '2rem',
+      textAlign: 'center',
+      paddingRight: 0,
+    },
   },
   menuLogoHead: {
     textShadow: '0 0 4px #111',
@@ -117,6 +142,26 @@ const useStyles = makeStyles(() => ({
     },
   },
   // show end
+
+  // more button start
+  mbWrapper: {
+    padding: '8px 12px',
+    borderRadius: '4px',
+    border: '2px solid #000',
+    cursor: 'pointer',
+    marginTop: '20px',
+    fontSize: '1.125rem',
+    lineHeight: '1.25rem',
+    fontWeight: 600,
+    display: 'flex',
+    alignItems: 'center',
+    textTransform: 'uppercase',
+    '&:hover': {
+      border: '2px solid rgb(224 32 32)',
+      color: 'rgb(224 32 32)',
+    },
+  },
+  // more button end
 }));
 
 export default useStyles;

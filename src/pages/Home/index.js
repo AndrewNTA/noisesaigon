@@ -1,8 +1,14 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material';
-import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight';
 import Bg from '../../static/images/bg_1.png';
-import { InfoBox, Spacing, Article, Menu, Show } from '../../components';
+import {
+  InfoBox,
+  Spacing,
+  Article,
+  Menu,
+  Show,
+  MoreButton,
+} from '../../components';
 import { articles } from '../../mockDatas/article';
 import { shows } from '../../mockDatas/show';
 import { months } from '../../constants';
@@ -24,7 +30,7 @@ function Home() {
         />
         <Spacing size={32} />
         <Grid container spacing={4}>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={12} md={6}>
             <h1 className={classes.title}>LIVE MUSIC THIS WEEK</h1>
             <div className={classes.content}>
               {Object.keys(shows).map((keyDate) => {
@@ -33,34 +39,33 @@ function Home() {
                 const month = months[dateShow.getMonth()];
                 const label = keyDate === '2023/02/13' ? 'Today' : 'Tomorrow';
                 return (
-                  <>
+                  <div key={keyDate}>
                     <div className={classes.showDate}>
                       <span className={classes.showLabel}>{label}</span>
                       {`${date} ${month}`}
                     </div>
                     {shows[keyDate].map((show) => (
                       <Show
+                        key={show.name}
                         name={show.name}
                         time={show.time}
                         location={show.location}
                         artists={show.artists}
                       />
                     ))}
-                  </>
+                  </div>
                 );
               })}
-              <div className={classes.btnMoreGigs}>
-                <span>MORE GIGS</span>
-                <KeyboardDoubleArrowRightIcon />
-              </div>
+              <MoreButton text="more gigs" />
             </div>
           </Grid>
-          <Grid item xs={6} md={6}>
+          <Grid item xs={12} md={6}>
             <h1 className={classes.title}>LATEST READS</h1>
             <div className={classes.content}>
               {articles.map((a) => (
-                <Article title={a.title} content={a.content} />
+                <Article key={a.title} title={a.title} content={a.content} />
               ))}
+              <MoreButton text="more reads" />
             </div>
           </Grid>
         </Grid>

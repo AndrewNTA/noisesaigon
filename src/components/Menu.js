@@ -13,12 +13,14 @@ function Menu() {
         <span className={classes.menuLogoHead}>Gig</span>
         <span className={classes.menuLogoTail}>Music</span>
       </div>
-      <div className={classes.menuItem} onClick={() => navigate('/gigs')}>
-        Gigs
+      <div className={classes.menuItemGroup}>
+        <div className={classes.menuItem} onClick={() => navigate('/gigs')}>
+          Gigs
+        </div>
+        <div className={classes.menuItem}>Reads</div>
+        <div className={classes.menuItem}>Support</div>
+        <div className={classes.menuItem}>Links</div>
       </div>
-      <div className={classes.menuItem}>Reads</div>
-      <div className={classes.menuItem}>Support</div>
-      <div className={classes.menuItem}>Links</div>
     </div>
   );
 }

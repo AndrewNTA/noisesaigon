@@ -1,11 +1,14 @@
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   bg: {
     width: '100%',
   },
   main: {
     padding: '1.25rem',
+    [theme.breakpoints.down('sm')]: {
+      padding: '1.25rem 0',
+    },
   },
   title: {
     padding: '0 0.75rem 0.5rem 0.5rem',
@@ -34,20 +37,11 @@ const useStyles = makeStyles(() => ({
     fontWeight: 700,
     marginRight: '6px',
   },
-  btnMoreGigs: {
-    padding: '6px 12px',
-    borderRadius: '2px',
-    border: '2px solid #000',
-    cursor: 'pointer',
-    marginTop: '20px',
-    fontSize: '1.125rem',
-    lineHeight: '1.25rem',
-    fontWeight: 600,
-    display: 'flex',
-    alignItems: 'center',
-  },
   content: {
     paddingRight: '7rem',
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: '0',
+    },
   },
 }));
 
