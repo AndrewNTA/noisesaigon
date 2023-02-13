@@ -1,11 +1,13 @@
 import React from 'react';
 import { Container } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import { Menu, Footer, Spacing } from '../../components';
 import Bg from '../../static/images/bg_2.png';
 import useStyles from './styles';
 
 function Read() {
   const classes = useStyles();
+  const navigate = useNavigate();
   return (
     <Container maxWidth="lg">
       <Menu />
@@ -14,7 +16,10 @@ function Read() {
       <div className={classes.main}>
         <div className={classes.section}>LATEST READS</div>
         <Spacing size={32} />
-        <div className={classes.title}>
+        <div
+          className={classes.title}
+          onClick={() => navigate('/reads/123456')}
+        >
           "THE ARTS ARE ESSENTIAL TO OUR WAY OF BEING": LOU HARBIDGE FROM
           DOWNGIRL ON RESILIENCE AND DIY
         </div>
@@ -24,7 +29,10 @@ function Read() {
           heart."
         </div>
         <Spacing size={32} />
-        <div className={classes.title}>
+        <div
+          className={classes.title}
+          onClick={() => navigate('/reads/123456')}
+        >
           "WE DROVE UP THE STREET HANDING IT TO PEOPLE OUT THE WINDOW": THE
           CANNANES ON HOW THEIR JOKE BAND TOOK THEM EVERYWHERE
         </div>
@@ -35,7 +43,10 @@ function Read() {
           with music communities internationally.
         </div>
         <Spacing size={32} />
-        <div className={classes.title}>
+        <div
+          className={classes.title}
+          onClick={() => navigate('/reads/123456')}
+        >
           "THE MORE YOU INVEST IN THE ARTS, THE HEALTHIER THE SCENE WILL
           BECOME": KIRSTY TICKLE OF PARTY DOZEN ON DIY AND THE DIRE STATE OF
           ARTS FUNDING
@@ -47,7 +58,10 @@ function Read() {
           broken PA in becoming a great performer.
         </div>
         <Spacing size={32} />
-        <div className={classes.title}>
+        <div
+          className={classes.title}
+          onClick={() => navigate('/reads/123456')}
+        >
           "THIS PLACE WOULD NOT EXIST WITHOUT THE AUDIENCE": NICK SHIMMIN OF THE
           PEOPLE'S REPUBLIC ON CREATING SYDNEY'S MOST UNIQUE HOUSE SHOWS
         </div>
@@ -59,7 +73,10 @@ function Read() {
         <Spacing size={32} />
         <div className={classes.section}>OCT 2022</div>
         <Spacing size={32} />
-        <div className={classes.title}>
+        <div
+          className={classes.title}
+          onClick={() => navigate('/reads/123456')}
+        >
           "WE DROVE UP THE STREET HANDING IT TO PEOPLE OUT THE WINDOW": THE
           CANNANES ON HOW THEIR JOKE BAND TOOK THEM EVERYWHERE
         </div>
@@ -70,7 +87,10 @@ function Read() {
           with music communities internationally.
         </div>
         <Spacing size={32} />
-        <div className={classes.title}>
+        <div
+          className={classes.title}
+          onClick={() => navigate('/reads/123456')}
+        >
           "THIS PLACE WOULD NOT EXIST WITHOUT THE AUDIENCE": NICK SHIMMIN OF THE
           PEOPLE'S REPUBLIC ON CREATING SYDNEY'S MOST UNIQUE HOUSE SHOWS
         </div>

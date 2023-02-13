@@ -6,6 +6,7 @@ import Gig from './pages/Gig';
 import Link from './pages/Link';
 import Support from './pages/Support';
 import Read from './pages/Read';
+import ReadDetail from './pages/ReadDetail';
 import theme from './theme';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/reads" element={<Read />} />
         <Route path="/links" element={<Link />} />
         <Route path="/support" element={<Support />} />
+        <Route path="/reads/:id" element={<ReadDetail />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </ThemeProvider>

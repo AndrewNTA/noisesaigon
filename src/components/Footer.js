@@ -38,13 +38,28 @@ function Footer() {
               <div className={classes.footerLink} onClick={() => navigate('/')}>
                 Home
               </div>
-              <div className={classes.footerLink}>Gig Guide</div>
-              <div className={classes.footerLink}>Reads</div>
+              <div
+                className={classes.footerLink}
+                onClick={() => navigate('/gigs')}
+              >
+                Gig Guide
+              </div>
+              <div
+                className={classes.footerLink}
+                onClick={() => navigate('/reads')}
+              >
+                Reads
+              </div>
               <div className={classes.footerLink}>About & FAQ</div>
             </Grid>
             <Grid item xs={6} md={6}>
               <div className={classes.footerLink}>Contact</div>
-              <div className={classes.footerLink}>Links</div>
+              <div
+                className={classes.footerLink}
+                onClick={() => navigate('/links')}
+              >
+                Links
+              </div>
               <div className={classes.footerLink}>Join the Discord!</div>
               <div className={classes.footerLink}>
                 Weekly Gig Guide Playlist

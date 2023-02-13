@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '0.75rem',
     borderLeft: '2px solid rgb(224 32 32)',
     marginBottom: '1.125rem',
+    cursor: 'pointer',
   },
   text: {
     lineHeight: '1.125rem',
