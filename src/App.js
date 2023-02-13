@@ -4,6 +4,7 @@ import { ThemeProvider } from '@mui/material/styles';
 import Home from './pages/Home';
 import Gig from './pages/Gig';
 import Link from './pages/Link';
+import Support from './pages/Support';
 import theme from './theme';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path="/gigs" element={<Gig />} />
         <Route path="/links" element={<Link />} />
+        <Route path="/support" element={<Support />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </ThemeProvider>
