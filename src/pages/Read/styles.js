@@ -7,6 +7,9 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: 0,
     },
   },
+  bg: {
+    width: '100%',
+  },
   section: {
     fontSize: '1.375rem',
     lineHeight: '1.75rem',
@@ -24,22 +27,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '1.125rem',
     paddingLeft: '0.75rem',
     borderLeft: '2px solid rgb(224 32 32)',
-    marginBottom: '2rem',
-  },
-  link: {
-    lineHeight: '1.125rem',
-    fontSize: '0.875rem',
-    paddingLeft: '0.75rem',
-    marginBottom: '0.5rem',
-    fontWeight: 600,
-    cursor: 'pointer',
-    '&:hover': {
-      color: 'rgb(224 32 32)',
-    },
+    marginBottom: '1.125rem',
   },
   text: {
     lineHeight: '1.125rem',
-    fontSize: '0.875rem',
+    fontSize: '1rem',
     paddingLeft: '0.75rem',
     marginBottom: '0.5rem',
   },

@@ -8,7 +8,7 @@ import {
   GigItem,
   ScrollTopBtn,
 } from '../../components';
-import Bg from '../../static/images/bg_2.png';
+import Bg from '../../static/images/bg_3.png';
 import { dayShows1, dayShows2 } from '../../mockDatas/show';
 import useStyles from './styles';
 
