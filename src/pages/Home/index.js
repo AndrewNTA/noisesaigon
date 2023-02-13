@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Grid } from '@mui/material';
+import { useNavigate } from 'react-router-dom';
 import Bg from '../../static/images/bg_1.png';
 import Discord from '../../static/images/discord-logo.svg';
 import {
@@ -10,6 +11,7 @@ import {
   Show,
   MoreButton,
   Footer,
+  ScrollTopBtn
 } from '../../components';
 import { articles } from '../../mockDatas/article';
 import { shows } from '../../mockDatas/show';
@@ -18,6 +20,7 @@ import useStyles from './styles';
 
 function Home() {
   const classes = useStyles();
+  const navigate = useNavigate();
   return (
     <Container maxWidth="lg">
       <Menu />
@@ -58,7 +61,7 @@ function Home() {
                   </div>
                 );
               })}
-              <MoreButton text="more gigs" />
+              <MoreButton text="more gigs" onClick={() => navigate('/gigs')}/>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -67,7 +70,7 @@ function Home() {
               {articles.map((a) => (
                 <Article key={a.title} title={a.title} content={a.content} />
               ))}
-              <MoreButton text="more reads" />
+              <MoreButton text="more reads" onClick={() => navigate('/reads')}/>
             </div>
           </Grid>
         </Grid>
@@ -115,6 +118,7 @@ function Home() {
         </Grid>
       </div>
       <Footer />
+      <ScrollTopBtn />
     </Container>
   );
 }

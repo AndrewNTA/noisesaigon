@@ -19,8 +19,12 @@ function Gigs() {
       <Menu />
       <img src={Bg} alt="bg" className={classes.bg} />
       <Spacing size={48} />
-      <Grid container spacing={12} className={classes.main}>
-        <Grid item xs={6} sm={8}>
+      <Grid
+        container
+        columnSpacing={{ xs: 2, sm: 2, md: 12 }}
+        className={classes.main}
+      >
+        <Grid item xs={12} sm={8}>
           <div className={classes.title}>feb 2023</div>
           <Spacing size={32} />
           <GigItem day="Mon" date="13" gigs={dayShows1} />
@@ -37,7 +41,7 @@ function Gigs() {
           <Spacing size={32} />
           <GigItem day="Sun" date="19" gigs={dayShows1} />
         </Grid>
-        <Grid item xs={6} sm={4} className={classes.section}>
+        <Grid item xs={12} sm={4} className={classes.section}>
           <div className={classes.title}>Gig guide playlist</div>
           <Spacing size={32} />
           <div>

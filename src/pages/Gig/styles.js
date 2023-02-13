@@ -1,11 +1,14 @@
 import { makeStyles } from '@mui/styles';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   bg: {
     width: '100%',
   },
   main: {
     padding: '0 1.5rem',
+    [theme.breakpoints.down('sm')]: {
+      padding: '0',
+    },
   },
   section: {
     fontSize: '0.875rem',

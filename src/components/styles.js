@@ -215,6 +215,10 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     paddingRight: '2.125rem',
     paddingLeft: '1.125rem',
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: '1.125rem',
+      paddingLeft: '1.125rem',
+    },
   },
   giDay: {
     fontSize: '1.125rem',

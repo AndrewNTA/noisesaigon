@@ -1,7 +1,7 @@
 import React from 'react';
 import { Container } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
-import { Menu, Footer, Spacing } from '../../components';
+import { Menu, Footer, Spacing, ScrollTopBtn } from '../../components';
 import Bg from '../../static/images/bg_2.png';
 import useStyles from './styles';
 
@@ -102,6 +102,7 @@ function Read() {
         <Spacing size={32} />
       </div>
       <Footer />
+      <ScrollTopBtn />
     </Container>
   );
 }
