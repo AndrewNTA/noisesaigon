@@ -1,8 +1,8 @@
-import React from 'react';
-import { Grid } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
-import Spacing from './Spacing';
-import useStyles from './styles';
+import React from "react";
+import { Grid } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import Spacing from "./Spacing";
+import useStyles from "./styles";
 
 function Footer() {
   const navigate = useNavigate();
@@ -12,57 +12,62 @@ function Footer() {
     <div className={classes.footerWrapper}>
       <Grid container spacing={5}>
         <Grid item xs={12} md={6}>
-          <div className={classes.footerLogo} onClick={() => navigate('/')}>
-            GIGMUSIC
+          <div className={classes.footerLogo} onClick={() => navigate("/")}>
+            Noisesaigon
           </div>
           <Spacing size={32} />
-          <div>© GigMusic Ltd. 2023</div>
-          <div>ABN 88 666 444 555</div>
-          <Spacing size={16} />
           <div>
-            GigMusic is registered as a not-for-profit entity with the
-            <a href="https://www.acnc.gov.au" className={classes.footerLinkGov}>
-              Australian Charities and Not-for-profits Commission
+            Email: <b>noisesaigon@gmail.com</b>
+          </div>
+          <Spacing size={8} />
+          <div>
+            Instargram:{" "}
+            <a
+              className={classes.footerLink}
+              href={"https://www.instagram.com/noisesaigon/"}
+              target="_blank" rel="noreferrer"
+            >
+              @noisesaigon
             </a>
           </div>
-          <Spacing size={16} />
+          <Spacing size={8} />
           <div>
-            The GigMusic "Can Man" mascot and all illustrations were created by
-            and © Andrew Nguyen, 2023. All rights reserved.
+            Facebook:{" "}
+            <a
+              className={classes.footerLink}
+              href={"https://www.facebook.com/noisesaigon/"}
+              target="_blank" rel="noreferrer"
+            >
+              Noise Saigon
+            </a>
           </div>
         </Grid>
         <Grid item xs={12} md={6}>
           <div className={classes.footerTitle}>Navigation</div>
           <Grid container spacing={2}>
             <Grid item xs={6} md={6}>
-              <div className={classes.footerLink} onClick={() => navigate('/')}>
+              <div className={classes.footerItem} onClick={() => navigate("/")}>
                 Home
               </div>
               <div
-                className={classes.footerLink}
-                onClick={() => navigate('/gigs')}
+                className={classes.footerItem}
+                onClick={() => navigate("/gigs")}
               >
-                Gig Guide
+                Gigs
               </div>
+            </Grid>
+            <Grid item xs={6} md={6}>
               <div
-                className={classes.footerLink}
-                onClick={() => navigate('/reads')}
+                className={classes.footerItem}
+                onClick={() => navigate("/reads")}
               >
                 Reads
               </div>
-              <div className={classes.footerLink}>About & FAQ</div>
-            </Grid>
-            <Grid item xs={6} md={6}>
-              <div className={classes.footerLink}>Contact</div>
               <div
-                className={classes.footerLink}
-                onClick={() => navigate('/links')}
+                className={classes.footerItem}
+                onClick={() => navigate("/links")}
               >
                 Links
-              </div>
-              <div className={classes.footerLink}>Join the Discord!</div>
-              <div className={classes.footerLink}>
-                Weekly Gig Guide Playlist
               </div>
             </Grid>
           </Grid>
