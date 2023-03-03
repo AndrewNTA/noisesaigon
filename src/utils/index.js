@@ -54,3 +54,7 @@ export const mapLinkGroupDisplay = (key) => {
       return "OTHERS";
   }
 };
+
+export const formatPrice = (price) => {
+  return new Intl.NumberFormat().format(price);
+};

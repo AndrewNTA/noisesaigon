@@ -113,7 +113,6 @@ const useStyles = makeStyles((theme) => ({
   showMoreInfo: {
     display: "flex",
     alignItems: "center",
-    marginTop: "6px",
     cursor: "pointer",
   },
   showMoreInfoText: {
@@ -122,7 +121,46 @@ const useStyles = makeStyles((theme) => ({
     color: "#000",
     "&:hover": {
       textDecorationLine: "underline",
+      color: "rgb(224 32 32)",
     },
+  },
+  showRow: {
+    marginTop: "6px",
+    display: "flex",
+    alignItems: "center",
+  },
+  showPrice: {
+    marginLeft: "16px",
+    fontWeight: 700,
+    fontSize: "0.875rem",
+    lineHeight: "1.25rem",
+  },
+  showOptionalIcon: {
+    height: "36px",
+    width: "36px",
+    backgroundColor: "#333",
+    borderRadius: "50%",
+    display: "inline-block",
+    textAlign: "center",
+    color: "#fff",
+    fontSize: "14px",
+    lineHeight: "36px",
+    fontWeight: 600,
+    position: "absolute",
+    top: "2px",
+    left: "-18px",
+  },
+  showOptional: {
+    marginTop: "0.75rem",
+    backgroundColor: "rgb(254 252 232)",
+    border: "1px solid #000",
+    borderRadius: "2px",
+    padding: "0.5rem 1rem 0.5rem 1.5rem",
+    position: "relative",
+    minHeight: "26px",
+    fontSize: "0.875rem",
+    lineHeight: "1.25rem",
+    fontStyle: "italic",
   },
   // show end
 
@@ -228,6 +266,26 @@ const useStyles = makeStyles((theme) => ({
     cursor: "pointer",
   },
   // scroll top button end
+
+  // more info modal start
+  mimButton: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "200px",
+    borderRadius: "6px",
+    padding: "8px 0",
+    cursor: "pointer",
+    color: "#fff",
+    fontWeight: 500,
+    textDecorationLine: "none",
+    backgroundColor: "#339AF0",
+  },
+  mimFacebook: {
+    width: "30px",
+    marginRight: "4px",
+  },
+  // more info modal end
 }));
 
 export default useStyles;

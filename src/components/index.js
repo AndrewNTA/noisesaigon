@@ -8,6 +8,7 @@ import GigItem from "./GigItem";
 import ScrollTopBtn from "./ScrollTopBtn";
 import SpotifyIframe from "./SpotifyIframe";
 import LinkLoading from "./LinkLoading";
+import MoreInfoModal from "./MoreInfoModal";
 
 export {
   Spacing,
@@ -20,4 +21,5 @@ export {
   ScrollTopBtn,
   SpotifyIframe,
   LinkLoading,
+  MoreInfoModal,
 };
