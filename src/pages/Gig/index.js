@@ -1,16 +1,16 @@
-import React from 'react';
-import { Container, Grid } from '@mui/material';
+import React from "react";
+import { Container, Grid } from "@mui/material";
 import {
   Menu,
   Footer,
   Spacing,
-  MoreButton,
   GigItem,
   ScrollTopBtn,
-} from '../../components';
-import Bg from '../../static/images/bg_3.png';
-import { dayShows1, dayShows2 } from '../../mockDatas/show';
-import useStyles from './styles';
+  SpotifyIframe,
+} from "components";
+import Bg from "static/images/bg_3.png";
+import { dayShows1, dayShows2 } from "../../mockDatas/show";
+import useStyles from "./styles";
 
 function Gigs() {
   const classes = useStyles();
@@ -42,65 +42,17 @@ function Gigs() {
           <GigItem day="Sun" date="19" gigs={dayShows1} />
         </Grid>
         <Grid item xs={12} sm={4} className={classes.section}>
-          <div className={classes.title}>Gig guide playlist</div>
+          <div className={classes.title}>NOISE SAIGON PLAYLIST</div>
+          <Spacing size={32} />
+          <SpotifyIframe />
+          <Spacing size={32} />
+          <div className={classes.title}>ABOUT THE GUIDE</div>
           <Spacing size={32} />
           <div>
-            Listen to (almost) every artist listed in the gig guide this week:
-          </div>
-          <ul>
-            <li>
-              <a className={classes.link} href="#">
-                Apple Music
-              </a>
-            </li>
-            <li>
-              <a className={classes.link} href="#">
-                Spotify
-              </a>
-            </li>
-            <li>
-              <a className={classes.link} href="#">
-                Tidal
-              </a>
-            </li>
-          </ul>
-          <div>Updated every Sunday!</div>
-          <Spacing size={32} />
-          <div className={classes.title}>about the guide</div>
-          <Spacing size={32} />
-          <div>
-            This guide is as simple as we can practically get away with. We'll
-            include some occasional commentary (feel free to submit your own!)
-            to help give you context on what can be a dizzyingly complex network
-            of musicians, collectives, communities, and spaces, or just make
-            sure you don't miss out on catching your next favourite act.
+            The aim is to keep this guide as simple as possible. If you have an
+            event you think should be listed here, hit the submit button below.
           </div>
           <Spacing size={16} />
-          <div>
-            Got a gig you think should be listed here?{' '}
-            <a className={classes.link} href="#">
-              Drop us an email
-            </a>
-          </div>
-          <Spacing size={32} />
-          <MoreButton text="submit a gig" />
-          <Spacing size={32} />
-          <div>
-            <b>Artists, managers, promoters, and venues:</b>
-          </div>
-          <Spacing size={16} />
-          <div>
-            Self-promo is fine —we love it when you let us know what you've got
-            going on! But we won't publish your marketing/social copy verbatim
-            or give you special consideration in the guide. We generally don't
-            list cover/tribute bands or background-music sets at hospitality
-            venues. All listings are at our own discretion. We will also
-            graciously refuse any offer of door spots for shows where we can buy
-            tickets.
-          </div>
-          <Spacing size={32} />
-          <MoreButton text="join our discord!" />
-          <MoreButton text="other links" />
         </Grid>
       </Grid>
       <Footer />

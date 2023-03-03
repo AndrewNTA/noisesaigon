@@ -1,12 +1,6 @@
 import { makeStyles } from '@mui/styles';
 
 const useStyles = makeStyles((theme) => ({
-  main: {
-    paddingRight: '6rem',
-    [theme.breakpoints.down('sm')]: {
-      paddingRight: 0,
-    },
-  },
   section: {
     fontSize: '1.375rem',
     lineHeight: '1.75rem',
@@ -27,12 +21,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '2rem',
   },
   link: {
-    lineHeight: '1.125rem',
+    lineHeight: '1.75rem',
     fontSize: '0.875rem',
     paddingLeft: '0.75rem',
-    marginBottom: '0.5rem',
     fontWeight: 600,
     cursor: 'pointer',
+    color: '#000',
+    textDecorationLine: 'none',
     '&:hover': {
       color: 'rgb(224 32 32)',
     },
@@ -41,7 +36,12 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: '1.125rem',
     fontSize: '0.875rem',
     paddingLeft: '0.75rem',
+    paddingRight: '4rem',
     marginBottom: '0.5rem',
+    textAlign: 'justify',
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: 0,
+    },
   },
 }));
 

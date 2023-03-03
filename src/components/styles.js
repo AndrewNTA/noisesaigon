@@ -177,7 +177,7 @@ const useStyles = makeStyles((theme) => ({
   },
   footerItem: {
     color: "white",
-    fontWeight: 500,
+    fontWeight: 400,
     marginBottom: "12px",
     cursor: "pointer",
   },
