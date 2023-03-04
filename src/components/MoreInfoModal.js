@@ -27,8 +27,8 @@ function MoreInfoModal({ isOpen, onClose, src }) {
       aria-describedby="modal-modal-description"
     >
       <Box sx={boxStyle}>
-        <Typography id="modal-modal-title" variant="h6" component="h2">
-          See more information on our fanpage:
+        <Typography id="modal-modal-title" variant="body1" component="body1">
+          See more information of this event on our fanpage:
         </Typography>
         <Typography id="modal-modal-description" sx={{ mt: 2 }}>
           <a

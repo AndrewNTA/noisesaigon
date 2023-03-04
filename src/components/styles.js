@@ -73,29 +73,29 @@ const useStyles = makeStyles((theme) => ({
   },
   // menu end
 
-  // show start
-  showWrapper: {
+  // event start
+  eventWrapper: {
     marginBottom: "16px",
     paddingLeft: "0.75rem",
   },
-  showName: {
+  eventName: {
     lineHeight: "1.5rem",
     textTransform: "uppercase",
     fontSize: "1.125rem",
     fontWeight: 700,
     fontStyle: "italic",
   },
-  showArtists: {
+  eventExtraInfo: {
     lineHeight: "1.25rem",
     textTransform: "uppercase",
     fontSize: "0.875rem",
     fontWeight: 600,
   },
-  showInfo: {
+  eventInfo: {
     display: "flex",
     alignItems: "center",
   },
-  showTime: {
+  eventTime: {
     lineHeight: "1.25rem",
     textTransform: "uppercase",
     fontSize: "0.875rem",
@@ -104,18 +104,26 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: "0.75rem",
     borderRight: "1px solid #7f7f7f",
   },
-  showLocation: {
+  eventVenue: {
     lineHeight: "1.25rem",
     textTransform: "uppercase",
     fontSize: "0.875rem",
     color: "#7f7f7f",
   },
-  showMoreInfo: {
+  eventVenueLink: {
+    lineHeight: "1.25rem",
+    textTransform: "uppercase",
+    fontSize: "0.875rem",
+    color: "#7f7f7f",
+    cursor: "pointer",
+    textDecorationLine: "none",
+  },
+  eventMoreInfo: {
     display: "flex",
     alignItems: "center",
     cursor: "pointer",
   },
-  showMoreInfoText: {
+  eventMoreInfoText: {
     lineHeight: "1.25rem",
     fontSize: "0.875rem",
     color: "#000",
@@ -124,18 +132,18 @@ const useStyles = makeStyles((theme) => ({
       color: "rgb(224 32 32)",
     },
   },
-  showRow: {
+  eventRow: {
     marginTop: "6px",
     display: "flex",
     alignItems: "center",
   },
-  showPrice: {
+  eventPrice: {
     marginLeft: "16px",
     fontWeight: 700,
     fontSize: "0.875rem",
     lineHeight: "1.25rem",
   },
-  showOptionalIcon: {
+  eventOptionalIcon: {
     height: "36px",
     width: "36px",
     backgroundColor: "#333",
@@ -150,7 +158,7 @@ const useStyles = makeStyles((theme) => ({
     top: "2px",
     left: "-18px",
   },
-  showOptional: {
+  eventOptional: {
     marginTop: "0.75rem",
     backgroundColor: "rgb(254 252 232)",
     border: "1px solid #000",
@@ -162,7 +170,7 @@ const useStyles = makeStyles((theme) => ({
     lineHeight: "1.25rem",
     fontStyle: "italic",
   },
-  // show end
+  // event end
 
   // more button start
   mbWrapper: {

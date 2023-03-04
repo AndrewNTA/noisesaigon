@@ -16,7 +16,7 @@ import {
 
 import { articles } from "../../mockDatas/article";
 import { shows } from "../../mockDatas/show";
-import { months } from "../../constants";
+import { months } from "constants/index";
 import useStyles from "./styles";
 
 const ARTICLES_QUERY = gql`

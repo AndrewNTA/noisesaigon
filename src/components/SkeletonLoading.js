@@ -2,7 +2,7 @@ import React from "react";
 import { Skeleton, Typography } from "@mui/material";
 import { Spacing } from "components";
 
-function LinkLoading({ length }) {
+function SkeletonLoading({ length }) {
   const arr = Array.from({ length }, (v, i) => i);
   return (
     <>
@@ -21,4 +21,4 @@ function LinkLoading({ length }) {
   );
 }
 
-export default LinkLoading;
+export default SkeletonLoading;

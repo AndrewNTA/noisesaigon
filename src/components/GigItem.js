@@ -1,7 +1,7 @@
 import React from 'react';
-import Show from './Show';
+import Event from './Event';
 import useStyles from './styles';
-function GigItem({ day, date, gigs }) {
+function GigItem({ day, date, events }) {
   const classes = useStyles();
   return (
     <div className={classes.giWrapper}>
@@ -10,13 +10,17 @@ function GigItem({ day, date, gigs }) {
         <div className={classes.giDate}>{date}</div>
       </div>
       <div className={classes.giGigs}>
-        {gigs.map((g) => (
-          <Show
-            key={g.name}
-            name={g.name}
-            time={g.time}
-            location={g.location}
-            artists={g.artists}
+        {events && events.map((ev) => (
+          <Event
+            key={ev.id}
+            eventName={ev.eventName}
+            time={ev.time}
+            venueLink={ev.venueLink}
+            venueName={ev.venueName}
+            facebookLink={ev.facebookLink}
+            optionalInfo={ev.optionalInfo}
+            extraInfo={ev.extraInfo}
+            price={ev.price}
           />
         ))}
       </div>
