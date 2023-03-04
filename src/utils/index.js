@@ -125,6 +125,14 @@ export const getDisplayTime = () => {
   return `${month} ${year}`;
 };
 
+export const formatDisplayFullDate = (dateStr) => {
+  const now = new Date(dateStr);
+  const month = months[now.getMonth()];
+  const year = now.getFullYear();
+  const date = now.getDate();
+  return `${date} ${month} ${year}`;
+};
+
 export const formatDisplayTime = (dateStr) => {
   const date = new Date(dateStr);
   let hours = date.getHours();

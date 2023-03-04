@@ -94,7 +94,7 @@ function Home() {
                     : "";
                 const month = months[new Date().getMonth()];
                 return (
-                  <div>
+                  <div key={`${date}-${month}`}>
                     <div className={classes.eventDate}>
                       <span className={classes.eventLabel}>{label}</span>
                       {`${date} ${month}`}
@@ -126,7 +126,7 @@ function Home() {
             {!articleLoading && articleList && (
               <div className={classes.content}>
                 {articleList.map((a) => (
-                  <Article key={a.id} title={a.name} content={a.brief} />
+                  <Article key={a.id} id={a.id} title={a.name} content={a.brief} />
                 ))}
                 <MoreButton
                   text="more reads"

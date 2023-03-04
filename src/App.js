@@ -15,7 +15,7 @@ function App() {
         <Route path="/gigs" element={<Gig />} />
         <Route path="/reads" element={<Read />} />
         <Route path="/links" element={<Link />} />
-        <Route path="/reads/:id" element={<ReadDetail />} />
+        <Route path="/reads/:readId" element={<ReadDetail />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </ThemeProvider>

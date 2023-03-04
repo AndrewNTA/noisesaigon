@@ -40,7 +40,7 @@ function Read() {
         {!loading &&
           readList &&
           readList.map((a) => (
-            <Article key={a.id} content={a.brief} title={a.name} />
+            <Article key={a.id} id={a.id} content={a.brief} title={a.name} />
           ))}
       </div>
       <Footer />
