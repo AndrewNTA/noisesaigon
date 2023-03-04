@@ -2,9 +2,6 @@ import { makeStyles } from "@mui/styles";
 
 const useStyles = makeStyles((theme) => ({
   // article start
-  aWrapper: {
-    marginBottom: "3rem",
-  },
   aTitle: {
     lineHeight: "1.25rem",
     fontStyle: "italic",
@@ -13,9 +10,14 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.125rem",
     paddingLeft: "0.75rem",
     borderLeft: "2px solid rgb(224 32 32)",
+    marginBottom: "1.125rem",
+    cursor: "pointer",
   },
   aContent: {
+    lineHeight: "1.125rem",
+    fontSize: "1rem",
     paddingLeft: "0.75rem",
+    marginBottom: "0.5rem",
   },
   // article end
 

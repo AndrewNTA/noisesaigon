@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: '1px solid black',
     fontSize: '1.375rem',
   },
-  showDate: {
+  eventDate: {
     textTransform: 'uppercase',
     lineHeight: '1.25rem',
     borderBottom: '1px solid black',
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '2.5rem',
     marginBottom: '1rem',
   },
-  showLabel: {
+  eventLabel: {
     color: 'rgb(224 32 32)',
     textTransform: 'uppercase',
     lineHeight: '1.25rem',

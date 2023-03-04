@@ -1,7 +1,7 @@
 import Spacing from "./Spacing";
 import Article from "./Article";
 import Menu from "./Menu";
-import Show from "./Event";
+import Event from "./Event";
 import MoreButton from "./MoreButton";
 import Footer from "./Footer";
 import GigItem from "./GigItem";
@@ -14,7 +14,7 @@ export {
   Spacing,
   Article,
   Menu,
-  Show,
+  Event,
   MoreButton,
   Footer,
   GigItem,

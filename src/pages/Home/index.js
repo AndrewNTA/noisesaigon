@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useMemo } from "react";
 import { Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
@@ -7,26 +7,43 @@ import {
   Spacing,
   Article,
   Menu,
-  Show,
+  Event,
   MoreButton,
   Footer,
   ScrollTopBtn,
   SpotifyIframe,
+  SkeletonLoading,
 } from "components";
-
-import { articles } from "../../mockDatas/article";
-import { shows } from "../../mockDatas/show";
 import { months } from "constants/index";
+import { genEndOfDate, genStartOfDate, groupEventsByDate } from "utils";
 import useStyles from "./styles";
 
 const ARTICLES_QUERY = gql`
-  {
-    articles {
-      createdAt
+  query Articles {
+    articles(first: 5, orderBy: publishedAt_DESC) {
+      brief
       id
       name
-      publishedAt
-      updatedAt
+    }
+  }
+`;
+
+const EVENTS_QUERY = gql`
+  query Events($start: DateTime, $end: DateTime) {
+    events(
+      first: 5
+      where: { time_gte: $start, time_lte: $end }
+      orderBy: publishedAt_ASC
+    ) {
+      id
+      extraInfo
+      eventName
+      price
+      optionalInfo
+      venueLink
+      venueName
+      time
+      facebookLink
     }
   }
 `;
@@ -34,7 +51,26 @@ const ARTICLES_QUERY = gql`
 function Home() {
   const classes = useStyles();
   const navigate = useNavigate();
-  // const { data, loading } = useQuery(ARTICLES_QUERY);
+  const { data: articleData, loading: articleLoading } =
+    useQuery(ARTICLES_QUERY);
+  const startOfDate = useMemo(genStartOfDate, []);
+  const endOfDate = useMemo(genEndOfDate, []);
+  const { data: eventData, loading: eventLoading } = useQuery(EVENTS_QUERY, {
+    variables: {
+      start: startOfDate,
+      end: endOfDate,
+    },
+  });
+
+  const groupedEvents = groupEventsByDate(eventData?.events);
+  const articleList = articleData?.articles ?? null;
+  const keys = groupedEvents ? Object.keys(groupedEvents) : [];
+  const getCurrentDate = useCallback(() => {
+    const now = new Date();
+    return now.getDate();
+  }, []);
+
+  const currentDate = useMemo(getCurrentDate, [getCurrentDate]);
 
   return (
     <Container maxWidth="lg">
@@ -45,27 +81,38 @@ function Home() {
         <Grid container spacing={4}>
           <Grid item xs={12} md={6}>
             <h1 className={classes.title}>LIVE MUSIC THIS WEEK</h1>
+            {eventLoading && <SkeletonLoading length={4} />}
             <div className={classes.content}>
-              {Object.keys(shows).map((keyDate) => {
-                const dateShow = new Date(keyDate);
-                const date = dateShow.getDate();
-                const month = months[dateShow.getMonth()];
-                const label = keyDate === "2023/02/13" ? "Today" : "Tomorrow";
+              {keys.map((k) => {
+                const eventList = groupedEvents[k] ?? null;
+                const date = parseInt(k);
+                const label =
+                  date === currentDate
+                    ? "today"
+                    : date === currentDate + 1
+                    ? "tomorrow"
+                    : "";
+                const month = months[new Date().getMonth()];
                 return (
-                  <div key={keyDate}>
-                    <div className={classes.showDate}>
-                      <span className={classes.showLabel}>{label}</span>
+                  <div>
+                    <div className={classes.eventDate}>
+                      <span className={classes.eventLabel}>{label}</span>
                       {`${date} ${month}`}
                     </div>
-                    {shows[keyDate].map((show) => (
-                      <Show
-                        key={show.name}
-                        name={show.name}
-                        time={show.time}
-                        location={show.location}
-                        artists={show.artists}
-                      />
-                    ))}
+                    {eventList &&
+                      eventList.map((ev) => (
+                        <Event
+                          key={ev.id}
+                          eventName={ev.eventName}
+                          time={ev.time}
+                          venueLink={ev.venueLink}
+                          venueName={ev.venueName}
+                          facebookLink={ev.facebookLink}
+                          optionalInfo={ev.optionalInfo}
+                          extraInfo={ev.extraInfo}
+                          price={ev.price}
+                        />
+                      ))}
                   </div>
                 );
               })}
@@ -74,15 +121,19 @@ function Home() {
           </Grid>
           <Grid item xs={12} md={6}>
             <h1 className={classes.title}>LATEST READS</h1>
-            <div className={classes.content}>
-              {articles.map((a) => (
-                <Article key={a.title} title={a.title} content={a.content} />
-              ))}
-              <MoreButton
-                text="more reads"
-                onClick={() => navigate("/reads")}
-              />
-            </div>
+            <Spacing size={16} />
+            {articleLoading && <SkeletonLoading length={4} />}
+            {!articleLoading && articleList && (
+              <div className={classes.content}>
+                {articleList.map((a) => (
+                  <Article key={a.id} title={a.name} content={a.brief} />
+                ))}
+                <MoreButton
+                  text="more reads"
+                  onClick={() => navigate("/reads")}
+                />
+              </div>
+            )}
           </Grid>
         </Grid>
         <Spacing size={64} />
