@@ -21,11 +21,12 @@ function Footer() {
           </div>
           <Spacing size={8} />
           <div>
-            Instargram:{" "}
+            Instagram:{" "}
             <a
               className={classes.footerLink}
               href={"https://www.instagram.com/noisesaigon/"}
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               @noisesaigon
             </a>
@@ -36,7 +37,8 @@ function Footer() {
             <a
               className={classes.footerLink}
               href={"https://www.facebook.com/noisesaigon/"}
-              target="_blank" rel="noreferrer"
+              target="_blank"
+              rel="noreferrer"
             >
               Noise Saigon
             </a>

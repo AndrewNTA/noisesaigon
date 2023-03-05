@@ -90,6 +90,7 @@ function Gigs() {
             The aim is to keep this guide as simple as possible. If you have an
             event you think should be listed here, hit the submit button below.
           </div>
+          <a href="mailto:noisesaigon@gmail.com" className={classes.sendEmailBtn}>Send an Email</a>
           <Spacing size={16} />
         </Grid>
       </Grid>
