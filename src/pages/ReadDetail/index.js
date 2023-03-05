@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Grid, Skeleton, Typography } from "@mui/material";
 import { useQuery, gql } from "@apollo/client";
+import ImageGallery from "react-image-gallery";
 import { useParams } from "react-router-dom";
 import {
   Menu,
@@ -11,6 +12,7 @@ import {
 } from "components";
 import { formatDisplayFullDate } from "utils";
 import useStyles from "./styles";
+import "react-image-gallery/styles/css/image-gallery.css";
 
 const ARTICLE_QUERY = gql`
   query Article($id: ID) {
@@ -41,6 +43,13 @@ const ARTICLE_QUERY = gql`
   }
 `;
 
+const genImages = (arr) => {
+  return arr.map((g) => ({
+    original: g.url,
+    thumbnail: g.url,
+  }));
+};
+
 function ReadDetail() {
   const classes = useStyles();
   const { readId } = useParams();
@@ -50,6 +59,10 @@ function ReadDetail() {
     },
   });
   const articleData = data?.article ?? null;
+  const imageList =
+    articleData && articleData.gallery && articleData.gallery.length > 0
+      ? genImages(articleData.gallery)
+      : null;
 
   return (
     <Container maxWidth="lg">
@@ -78,6 +91,8 @@ function ReadDetail() {
                 />
               </>
             )}
+            <Spacing size={32} />
+            {imageList && <ImageGallery items={imageList} />}
           </Grid>
           <Grid item xs={12} md={3}>
             {loading && (
