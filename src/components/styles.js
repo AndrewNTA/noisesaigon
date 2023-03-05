@@ -62,6 +62,11 @@ const useStyles = makeStyles((theme) => ({
       padding: "4px 0",
     },
   },
+  menuLogoWrapper: {
+    [theme.breakpoints.down("sm")]: {
+      textAlign: "center",
+    },
+  },
   menuLogo: {
     width: "240px",
     height: "50px",
@@ -69,9 +74,8 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: "4rem",
     paddingLeft: "0.75rem",
     [theme.breakpoints.down("sm")]: {
-      width: "80px",
-      textAlign: "center",
       paddingRight: 0,
+      paddingLeft: 0,
     },
   },
   // menu end

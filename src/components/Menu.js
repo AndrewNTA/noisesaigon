@@ -1,8 +1,8 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Logo from 'static/images/logo.png'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import Logo from "static/images/logo.png";
 
-import useStyles from './styles';
+import useStyles from "./styles";
 
 function Menu() {
   const navigate = useNavigate();
@@ -10,17 +10,17 @@ function Menu() {
 
   return (
     <div className={classes.menuWrapper}>
-      <div className={classes.menuLogo} onClick={() => navigate('/')}>
+      <div className={classes.menuLogoWrapper} onClick={() => navigate("/")}>
         <img src={Logo} alt="noisesaigon" className={classes.menuLogo} />
       </div>
       <div className={classes.menuItemGroup}>
-        <div className={classes.menuItem} onClick={() => navigate('/gigs')}>
+        <div className={classes.menuItem} onClick={() => navigate("/gigs")}>
           Gigs
         </div>
-        <div className={classes.menuItem} onClick={() => navigate('/reads')}>
+        <div className={classes.menuItem} onClick={() => navigate("/reads")}>
           Reads
         </div>
-        <div className={classes.menuItem} onClick={() => navigate('/links')}>
+        <div className={classes.menuItem} onClick={() => navigate("/links")}>
           Links
         </div>
       </div>
