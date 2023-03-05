@@ -1,8 +1,10 @@
 import React, { useCallback, useMemo } from "react";
 import { Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { useQuery, gql } from "@apollo/client";
 import Bg from "static/images/bg_1.png";
+import Thumbnail from "static/images/thumbnail.png";
 import {
   Spacing,
   Article,
@@ -74,6 +76,14 @@ function Home() {
 
   return (
     <Container maxWidth="lg">
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>Noise Saigon</title>
+        <link rel="canonical" href="http://noisesaigon.com/" />
+        <meta name="description" content="Make some noise" />
+        <meta property="og:title" content="Noise Saigon" />
+        <meta property="og:image" content={Thumbnail} />
+      </Helmet>
       <Menu />
       <img src={Bg} alt="bg" className={classes.bg} />
       <div className={classes.main}>
@@ -126,7 +136,12 @@ function Home() {
             {!articleLoading && articleList && (
               <div className={classes.content}>
                 {articleList.map((a) => (
-                  <Article key={a.id} id={a.id} title={a.name} content={a.brief} />
+                  <Article
+                    key={a.id}
+                    id={a.id}
+                    title={a.name}
+                    content={a.brief}
+                  />
                 ))}
                 <MoreButton
                   text="more reads"
