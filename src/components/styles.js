@@ -64,6 +64,7 @@ const useStyles = makeStyles((theme) => ({
   },
   menuLogo: {
     width: "240px",
+    height: "50px",
     cursor: "pointer",
     paddingRight: "4rem",
     paddingLeft: "0.75rem",
