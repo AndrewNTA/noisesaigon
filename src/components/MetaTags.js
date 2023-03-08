@@ -41,6 +41,11 @@ function MetaTags({ title, desc, keyWords, thumbnailUrl }) {
         property="og:description"
       ></meta>
       <meta
+        content={desc ? desc : DEFAULT_DESCRIPTION}
+        itemprop="headline"
+        property="og:title"
+      ></meta>
+      <meta
         property="og:image"
         itemprop="thumbnailUrl"
         content={thumbnailUrl ? thumbnailUrl : DEFAULT_THUMBNAIL_URL}

@@ -2,7 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter as Router } from "react-router-dom";
 import { ApolloProvider, ApolloClient, InMemoryCache } from "@apollo/client";
-import { MetaTags } from "components";
 
 import "./index.css";
 import App from "./App";
@@ -18,7 +17,6 @@ root.render(
   <React.StrictMode>
     <ApolloProvider client={client}>
       <Router>
-        <MetaTags />
         <App />
       </Router>
     </ApolloProvider>
