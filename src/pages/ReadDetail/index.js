@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { Container, Grid, Skeleton, Typography } from "@mui/material";
 import { useQuery, gql } from "@apollo/client";
 import ImageGallery from "react-image-gallery";
@@ -46,6 +46,7 @@ const ARTICLE_QUERY = gql`
 `;
 
 const genImages = (arr) => {
+  if (!arr || arr.length === 0) return null;
   return arr.map((g) => ({
     original: g.url,
     thumbnail: g.url,
@@ -62,12 +63,14 @@ function ReadDetail() {
     },
   });
   const articleData = data?.article ?? null;
-  const imageList =
-    articleData && articleData.gallery && articleData.gallery.length > 0
-      ? genImages(articleData.gallery)
-      : null;
-
-  const keyWords = genKeyWords(articleData && articleData.metaTags);
+  const imageList = useMemo(
+    () => genImages(articleData && articleData.gallery),
+    [articleData]
+  );
+  const keyWords = useMemo(
+    () => genKeyWords(articleData && articleData.metaTags),
+    [articleData]
+  );
 
   useEffect(() => {
     window.scrollTo({

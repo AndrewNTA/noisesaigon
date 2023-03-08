@@ -16,7 +16,31 @@ import {
 } from "components";
 import { months } from "constants/index";
 import { genEndOfDate, genStartOfDate, groupEventsByDate } from "utils";
+import ImageGallery from "react-image-gallery";
 import useStyles from "./styles";
+
+const genImages = (arr) => {
+  if (!arr || arr.length === 0) return null;
+  return arr.map((a) => ({
+    original: a?.image?.url,
+    thumbnail: a?.image?.url,
+  }));
+};
+
+const BANNERS_QUERY = gql`
+  query Banners {
+    banners(first: 5) {
+      id
+      image {
+        url(
+          transformation: {
+            image: { resize: { fit: clip, height: 2048, width: 682 } }
+          }
+        )
+      }
+    }
+  }
+`;
 
 const ARTICLES_QUERY = gql`
   query Articles {
@@ -51,6 +75,7 @@ const EVENTS_QUERY = gql`
 function Home() {
   const classes = useStyles();
   const navigate = useNavigate();
+  const { data: bannerData } = useQuery(BANNERS_QUERY);
   const { data: articleData, loading: articleLoading } =
     useQuery(ARTICLES_QUERY);
   const startOfDate = useMemo(genStartOfDate, []);
@@ -78,11 +103,25 @@ function Home() {
   }, []);
 
   const currentDate = useMemo(getCurrentDate, [getCurrentDate]);
+  const bannerList = useMemo(
+    () => genImages(bannerData && bannerData.banners),
+    [bannerData]
+  );
 
   return (
     <Container maxWidth="lg">
       <Menu />
-      <img src={Bg} alt="bg" className={classes.bg} />
+      {bannerList && (
+        <ImageGallery
+          items={bannerList}
+          showThumbnails={false}
+          autoPlay={true}
+          slideDuration={1500}
+          slideInterval={8000}
+          showPlayButton={false}
+          showFullscreenButton={false}
+        />
+      )}
       <div className={classes.main}>
         <Spacing size={32} />
         <Grid container spacing={4}>
