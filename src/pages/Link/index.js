@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "@mui/material";
 import { useQuery, gql } from "@apollo/client";
 import {
@@ -29,6 +29,13 @@ function Link() {
   const groupedLinks = groupLinks(data?.links);
 
   const groupKeys = groupedLinks && Object.keys(groupedLinks);
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <Container maxWidth="lg">

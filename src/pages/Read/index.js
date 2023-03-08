@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container } from "@mui/material";
 import { useQuery, gql } from "@apollo/client";
 import {
@@ -27,6 +27,13 @@ function Read() {
   const { data, loading } = useQuery(ARTICLES_QUERY);
 
   const readList = data && data.articles;
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   return (
     <Container maxWidth="lg">

@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import { useQuery, gql } from "@apollo/client";
 import {
@@ -45,6 +45,13 @@ function Gigs() {
       end: endOfDate,
     },
   });
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, [])
 
   const groupedEvents = groupEventsByDate(data?.events);
   const currentMonth = getDisplayTime();

@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Grid, Skeleton, Typography } from "@mui/material";
 import { useQuery, gql } from "@apollo/client";
 import ImageGallery from "react-image-gallery";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import {
   Menu,
   Footer,
@@ -53,6 +53,7 @@ const genImages = (arr) => {
 function ReadDetail() {
   const classes = useStyles();
   const { readId } = useParams();
+  const navigate = useNavigate();
   const { data, loading } = useQuery(ARTICLE_QUERY, {
     variables: {
       id: readId,
@@ -64,6 +65,16 @@ function ReadDetail() {
       ? genImages(articleData.gallery)
       : null;
 
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
+
+  if (!loading && !articleData) {
+    navigate("/not-found");
+  }
   return (
     <Container maxWidth="lg">
       <Menu />

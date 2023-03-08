@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback, useMemo, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
@@ -61,6 +61,13 @@ function Home() {
       end: endOfDate,
     },
   });
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  }, []);
 
   const groupedEvents = groupEventsByDate(eventData?.events);
   const articleList = articleData?.articles ?? null;
