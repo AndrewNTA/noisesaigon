@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 const DEFAULT_TITLE = "Noise Saigon";
-const DEFAULT_DESCRIPTION = "000 Make some noise! Music every day every time";
+const DEFAULT_DESCRIPTION = "Make some noise! Music every day every time";
 const DEFAULT_KEY_WORDS = "Music, Events, Saigon, Drums, Festival, Liveshow";
 const DEFAULT_THUMBNAIL_URL =
   "https://media.graphassets.com/resize=fit:clip,height:600,width:970/YA6TZwpvQfK31H93Dpzu";
@@ -39,16 +39,19 @@ function MetaTags({ title, desc, keyWords, thumbnailUrl }) {
         content={desc ? desc : DEFAULT_DESCRIPTION}
         itemprop="description"
         property="og:description"
+        data-react-helmet="true"
       ></meta>
       <meta
         property="og:image"
         itemprop="thumbnailUrl"
         content={thumbnailUrl ? thumbnailUrl : DEFAULT_THUMBNAIL_URL}
+        data-react-helmet="true"
       />
       <meta
         content={desc ? desc : DEFAULT_DESCRIPTION}
         itemprop="headline"
         property="og:title"
+        data-react-helmet="true"
       ></meta>
       <meta property="og:image:height" content="800"></meta>
       <meta property="og:image:height" content="354"></meta>
@@ -60,10 +63,12 @@ function MetaTags({ title, desc, keyWords, thumbnailUrl }) {
       <meta
         name="twitter:description"
         content={desc ? desc : DEFAULT_DESCRIPTION}
+        data-react-helmet="true"
       ></meta>
       <meta
         name="twitter:image"
         content={thumbnailUrl ? thumbnailUrl : DEFAULT_THUMBNAIL_URL}
+        data-react-helmet="true"
       ></meta>
       {/* End twitter metatag */}
     </Helmet>
