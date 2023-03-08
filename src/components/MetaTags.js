@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 const DEFAULT_TITLE = "Noise Saigon";
-const DEFAULT_DESCRIPTION = "Make some noise! Music every day every time";
+const DEFAULT_DESCRIPTION = "000 Make some noise! Music every day every time";
 const DEFAULT_KEY_WORDS = "Music, Events, Saigon, Drums, Festival, Liveshow";
 const DEFAULT_THUMBNAIL_URL =
   "https://media.graphassets.com/resize=fit:clip,height:600,width:970/YA6TZwpvQfK31H93Dpzu";
