@@ -33,7 +33,7 @@ const EVENTS_QUERY = gql`
     events(
       first: 5
       where: { time_gte: $start, time_lte: $end }
-      orderBy: publishedAt_ASC
+      orderBy: time_ASC
     ) {
       id
       extraInfo
