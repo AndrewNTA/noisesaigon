@@ -9,8 +9,9 @@ import {
   Spacing,
   ScrollTopBtn,
   SkeletonReadLoading,
+  MetaTags,
 } from "components";
-import { formatDisplayFullDate } from "utils";
+import { formatDisplayFullDate, genKeyWords } from "utils";
 import useStyles from "./styles";
 import "react-image-gallery/styles/css/image-gallery.css";
 
@@ -21,6 +22,7 @@ const ARTICLE_QUERY = gql`
       id
       metaTags
       name
+      brief
       publishedAt
       content {
         html
@@ -65,6 +67,8 @@ function ReadDetail() {
       ? genImages(articleData.gallery)
       : null;
 
+  const keyWords = genKeyWords(articleData && articleData.metaTags);
+
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -77,6 +81,11 @@ function ReadDetail() {
   }
   return (
     <Container maxWidth="lg">
+      <MetaTags
+        keyWords={keyWords}
+        title={articleData && articleData.name}
+        desc={articleData && articleData.brief}
+      />
       <Menu />
       <Spacing size={48} />
       <div className={classes.main}>

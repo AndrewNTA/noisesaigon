@@ -143,3 +143,14 @@ export const formatDisplayTime = (dateStr) => {
   minutes = `0${minutes}`.slice(-2);
   return `${hours}:${minutes} ${ampm}`;
 };
+
+export const genKeyWords = (arr) => {
+  if (!arr) {
+    return "";
+  }
+  let result = "";
+  for (let i in arr) {
+    result = result ? `${result}, ${arr[i]}` : arr[i];
+  }
+  return result;
+};
