@@ -7,6 +7,7 @@ import {
   Spacing,
   ScrollTopBtn,
   SkeletonLoading,
+  MetaTags
 } from "components";
 import { groupLinks, mapLinkGroupDisplay } from "utils";
 import useStyles from "./styles";
@@ -39,6 +40,7 @@ function Link() {
 
   return (
     <Container maxWidth="lg">
+      <MetaTags />
       <Menu />
       <Spacing size={48} />
       <div>

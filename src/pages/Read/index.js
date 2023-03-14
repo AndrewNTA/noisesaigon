@@ -8,6 +8,7 @@ import {
   ScrollTopBtn,
   SkeletonLoading,
   Article,
+  MetaTags
 } from "components";
 import Bg from "static/images/bg_2.png";
 import useStyles from "./styles";
@@ -37,6 +38,7 @@ function Read() {
 
   return (
     <Container maxWidth="lg">
+      <MetaTags />
       <Menu />
       <img src={Bg} alt="bg" className={classes.bg} />
       <Spacing size={48} />

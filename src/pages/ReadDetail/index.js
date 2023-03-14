@@ -84,11 +84,11 @@ function ReadDetail() {
   }
   return (
     <Container maxWidth="lg">
-      {articleData && <MetaTags
+      <MetaTags
         keyWords={keyWords}
-        title={articleData.name}
-        desc={articleData.brief}
-      />}
+        title={articleData?.name}
+        desc={articleData?.brief}
+      />
       <Menu />
       <Spacing size={48} />
       <div className={classes.main}>

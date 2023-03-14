@@ -2,15 +2,14 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 const DEFAULT_TITLE = "Noise Saigon";
-const DEFAULT_DESCRIPTION = "Make some noise! Music every day every time";
-const DEFAULT_KEY_WORDS = "Music, Events, Saigon, Drums, Festival, Liveshow";
+const DEFAULT_DESCRIPTION = "live. music.";
+const DEFAULT_KEY_WORDS = "Music, Events, Saigon, Drums, Festival, Liveshow, Bia, Live, Coffee, Rock, Ho Chi Minh";
 const DEFAULT_THUMBNAIL_URL =
   "https://media.graphassets.com/resize=fit:clip,height:600,width:970/YA6TZwpvQfK31H93Dpzu";
 
 function MetaTags({ title, desc, keyWords, thumbnailUrl }) {
   return (
     <Helmet>
-      <meta charSet="utf-8" />
       <title>{title ? title : DEFAULT_TITLE}</title>
       <link rel="canonical" href="https://noisesaigon.com/" />
       <meta

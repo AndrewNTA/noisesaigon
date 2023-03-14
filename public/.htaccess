@@ -1,11 +1,27 @@
 <IfModule mod_rewrite.c>
 
-  RewriteEngine On
-  RewriteBase /
-  RewriteRule ^index\.html$ - [L]
-  RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{REQUEST_FILENAME} !-l
-  RewriteRule . /index.html [L]
+RewriteEngine On
+
+RewriteBase /
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule . /index.html [L]
+
+# Remove trailing slash from non-filepath urls
+RewriteCond %{REQUEST_URI} /(.+)/$
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ https://www.example.com/%1 [R=301,L]
+
+# Include trailing slash on directory 
+RewriteCond %{REQUEST_URI} !(.+)/$
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^(.+)$ https://www.example.com/$1/ [R=301,L]
+
+# Force HTTPS and WWW 
+RewriteCond %{HTTP_HOST} !^www\.(.*)$ [OR,NC]
+RewriteCond %{https} off  
+RewriteRule ^(.*)$ https://www.example.com/$1 [R=301,L]
 
 </IfModule>

@@ -2,7 +2,6 @@ import React, { useCallback, useMemo, useEffect } from "react";
 import { Container, Grid } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useQuery, gql } from "@apollo/client";
-import Bg from "static/images/bg_1.png";
 import {
   Spacing,
   Article,
@@ -13,6 +12,7 @@ import {
   ScrollTopBtn,
   SpotifyIframe,
   SkeletonLoading,
+  MetaTags
 } from "components";
 import { months } from "constants/index";
 import { genEndOfDate, genStartOfDate, groupEventsByDate } from "utils";
@@ -110,6 +110,7 @@ function Home() {
 
   return (
     <Container maxWidth="lg">
+      <MetaTags />
       <Menu />
       {bannerList && (
         <ImageGallery

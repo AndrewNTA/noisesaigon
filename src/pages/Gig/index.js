@@ -9,6 +9,7 @@ import {
   ScrollTopBtn,
   SpotifyIframe,
   SkeletonLoading,
+  MetaTags
 } from "components";
 import Bg from "static/images/bg_3.png";
 import {
@@ -60,6 +61,7 @@ function Gigs() {
 
   return (
     <Container maxWidth="lg">
+      <MetaTags />
       <Menu />
       <img src={Bg} alt="bg" className={classes.bg} />
       <Spacing size={48} />

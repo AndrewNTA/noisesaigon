@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import { MetaTags  } from "components";
 import Image from "static/images/not-found.png";
 import useStyles from "./styles";
 
@@ -13,6 +14,7 @@ function NotFound() {
 
   return (
     <div className={classes.container}>
+      <MetaTags />
       <img src={Image} className={classes.img} alt="404 not found" />
       <div className={classes.text}>Oops! Page not found</div>
       <div className={classes.btn} onClick={goHome}>
