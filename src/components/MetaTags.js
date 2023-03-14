@@ -11,7 +11,7 @@ function MetaTags({ title, desc, keyWords, thumbnailUrl }) {
   return (
     <Helmet>
       <title>{title ? title : DEFAULT_TITLE}</title>
-      <link rel="canonical" href="https://noisesaigon.com/" />
+      <link rel="canonical" href="https://www.noisesaigon.com/" />
       <meta
         property="article:tag"
         content={keyWords ? keyWords : DEFAULT_KEY_WORDS}
@@ -28,11 +28,11 @@ function MetaTags({ title, desc, keyWords, thumbnailUrl }) {
 
       {/* Start Facebook metatag */}
       <meta property="og:title" content={title ? title : DEFAULT_TITLE} />
-      <meta property="og:site_name" content="noisesaigon.com"></meta>
+      <meta property="og:site_name" content="www.noisesaigon.com"></meta>
       <meta
         property="og:url"
         itemprop="url"
-        content="https://noisesaigon.com/"
+        content="https://www.noisesaigon.com/"
       ></meta>
       <meta
         content={desc ? desc : DEFAULT_DESCRIPTION}
@@ -57,7 +57,7 @@ function MetaTags({ title, desc, keyWords, thumbnailUrl }) {
       {/* End Facebook metatag */}
       {/* Start twitter metatag */}
       <meta name="twitter:card" value="summary"></meta>
-      <meta name="twitter:url" content="https://noisesaigon.com/"></meta>
+      <meta name="twitter:url" content="https://www.noisesaigon.com/"></meta>
       <meta name="twitter:title" content={title ? title : DEFAULT_TITLE}></meta>
       <meta
         name="twitter:description"
