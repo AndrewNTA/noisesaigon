@@ -77,11 +77,12 @@ export const genEndDate = () => {
   return end.toISOString();
 };
 
-// Generate the end date of year to query
+// Generate the end date of 1 year to query
 export const genEndDateOfYear = () => {
   const now = new Date();
   const year = now.getFullYear();
-  const end = new Date(year, 11, 31, 23, 59, 59);
+  const month = now.getMonth();
+  const end = new Date(year + 1, month + 1, 0, 23, 59, 59);
   return end.toISOString();
 };
 
@@ -115,10 +116,12 @@ export const groupEventsByMonth = (events) => {
     const time = events[i].time;
     const d = new Date(time);
     const month = d.getMonth();
-    if (!result[month]) {
-      result[month] = [events[i]];
+    const year = d.getFullYear();
+    const key = `${months[month]} ${year}`;
+    if (!result[key]) {
+      result[key] = [events[i]];
     } else {
-      result[month] = [...result[month], events[i]];
+      result[key] = [...result[key], events[i]];
     }
   }
   return result;
@@ -142,14 +145,6 @@ export const groupEventsByDate = (events) => {
     }
   }
   return result;
-};
-
-export const getDisplayTime = (month) => {
-  const now = new Date();
-  const year = now.getFullYear();
-
-  const m = months[month];
-  return `${m} ${year}`;
 };
 
 export const formatDisplayFullDate = (dateStr) => {

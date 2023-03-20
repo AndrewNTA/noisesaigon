@@ -17,13 +17,12 @@ import {
   genStartDate,
   groupEventsByDate,
   groupEventsByMonth,
-  getDisplayTime,
 } from "utils";
 import useStyles from "./styles";
 
 const EVENTS_QUERY = gql`
   query Events($start: DateTime, $end: DateTime) {
-    events(first: 100, where: { time_gte: $start, time_lte: $end }) {
+    events(first: 100, orderBy: time_ASC, where: { time_gte: $start, time_lte: $end }) {
       id
       extraInfo
       eventName
@@ -75,13 +74,12 @@ function Gigs() {
           {loading && <SkeletonLoading length={4} />}
           {!loading &&
             groupedEventsByMonth &&
-            monthKeys.map((m) => {
-              const displayMonth = getDisplayTime(m);
-              const groupedEvents = groupEventsByDate(groupedEventsByMonth[m]);
+            monthKeys.map((time) => {
+              const groupedEvents = groupEventsByDate(groupedEventsByMonth[time]);
               const keys = groupedEvents ? Object.keys(groupedEvents) : [];
               return (
-                <div key={displayMonth}>
-                  <div className={classes.title}>{displayMonth}</div>
+                <div key={time}>
+                  <div className={classes.title}>{time}</div>
                   <Spacing size={32} />
                   {groupedEvents &&
                     keys.map((date) => {
