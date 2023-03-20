@@ -61,19 +61,27 @@ export const formatPrice = (price) => {
 };
 
 // Generate the start date to query
-export const genStartOfDate = () => {
-  const start = new Date();
-  start.setUTCHours(0, 0, 0, 0);
+export const genStartDate = () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const day = now.getDate();
+  const month  = now.getMonth();
+  const start = new Date(year, month, day, 0, 0, 0);
   return start.toISOString();
 };
 
-// Generate the end date of month to query
-export const genEndOfDate = () => {
+// Generate the end date of 30 days to query
+export const genEndDate = () => {
   const now = new Date();
-  const month = now.getMonth();
+  const end = new Date(new Date().setDate(now.getDate() + 30));
+  return end.toISOString();
+};
+
+// Generate the end date of year to query
+export const genEndDateOfYear = () => {
+  const now = new Date();
   const year = now.getFullYear();
-  const end = new Date(year, month + 1, 0);
-  end.setUTCHours(23, 59, 59, 999);
+  const end = new Date(year, 11, 31, 23, 59, 59);
   return end.toISOString();
 };
 
@@ -98,6 +106,24 @@ export const mapDayDisplay = (day) => {
   }
 };
 
+export const groupEventsByMonth = (events) => {
+  if (!events) {
+    return null;
+  }
+  const result = {};
+  for (let i in events) {
+    const time = events[i].time;
+    const d = new Date(time);
+    const month = d.getMonth();
+    if (!result[month]) {
+      result[month] = [events[i]];
+    } else {
+      result[month] = [...result[month], events[i]];
+    }
+  }
+  return result;
+}
+
 export const groupEventsByDate = (events) => {
   if (!events) {
     return null;
@@ -118,11 +144,12 @@ export const groupEventsByDate = (events) => {
   return result;
 };
 
-export const getDisplayTime = () => {
+export const getDisplayTime = (month) => {
   const now = new Date();
-  const month = months[now.getMonth()];
   const year = now.getFullYear();
-  return `${month} ${year}`;
+
+  const m = months[month];
+  return `${m} ${year}`;
 };
 
 export const formatDisplayFullDate = (dateStr) => {

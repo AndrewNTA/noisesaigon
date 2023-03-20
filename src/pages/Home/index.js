@@ -15,7 +15,7 @@ import {
   MetaTags
 } from "components";
 import { months } from "constants/index";
-import { genEndOfDate, genStartOfDate, groupEventsByDate } from "utils";
+import { genEndDate, genStartDate, groupEventsByDate } from "utils";
 import ImageGallery from "react-image-gallery";
 import useStyles from "./styles";
 
@@ -78,8 +78,8 @@ function Home() {
   const { data: bannerData } = useQuery(BANNERS_QUERY);
   const { data: articleData, loading: articleLoading } =
     useQuery(ARTICLES_QUERY);
-  const startOfDate = useMemo(genStartOfDate, []);
-  const endOfDate = useMemo(genEndOfDate, []);
+  const startOfDate = useMemo(genStartDate, []);
+  const endOfDate = useMemo(genEndDate, []);
   const { data: eventData, loading: eventLoading } = useQuery(EVENTS_QUERY, {
     variables: {
       start: startOfDate,

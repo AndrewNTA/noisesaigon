@@ -9,13 +9,14 @@ import {
   ScrollTopBtn,
   SpotifyIframe,
   SkeletonLoading,
-  MetaTags
+  MetaTags,
 } from "components";
 import Bg from "static/images/bg_3.png";
 import {
-  genEndOfDate,
-  genStartOfDate,
+  genEndDateOfYear,
+  genStartDate,
   groupEventsByDate,
+  groupEventsByMonth,
   getDisplayTime,
 } from "utils";
 import useStyles from "./styles";
@@ -38,8 +39,8 @@ const EVENTS_QUERY = gql`
 
 function Gigs() {
   const classes = useStyles();
-  const startOfDate = useMemo(genStartOfDate, []);
-  const endOfDate = useMemo(genEndOfDate, []);
+  const startOfDate = useMemo(genStartDate, []);
+  const endOfDate = useMemo(genEndDateOfYear, []);
   const { data, loading } = useQuery(EVENTS_QUERY, {
     variables: {
       start: startOfDate,
@@ -50,14 +51,14 @@ function Gigs() {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
-  }, [])
+  }, []);
 
-  const groupedEvents = groupEventsByDate(data?.events);
-  const currentMonth = getDisplayTime();
-
-  const keys = groupedEvents ? Object.keys(groupedEvents) : [];
+  const groupedEventsByMonth = groupEventsByMonth(data?.events);
+  const monthKeys = groupedEventsByMonth
+    ? Object.keys(groupedEventsByMonth)
+    : [];
 
   return (
     <Container maxWidth="lg">
@@ -71,20 +72,31 @@ function Gigs() {
         className={classes.main}
       >
         <Grid item xs={12} sm={8}>
-          <div className={classes.title}>{currentMonth}</div>
-          <Spacing size={32} />
           {loading && <SkeletonLoading length={4} />}
-          {!loading && groupedEvents &&
-            keys.map((date) => {
-              const eventList = groupedEvents[date] ?? null;
-              const day = eventList ? eventList[0]?.day : "";
+          {!loading &&
+            groupedEventsByMonth &&
+            monthKeys.map((m) => {
+              const displayMonth = getDisplayTime(m);
+              const groupedEvents = groupEventsByDate(groupedEventsByMonth[m]);
+              const keys = groupedEvents ? Object.keys(groupedEvents) : [];
               return (
-                eventList && (
-                  <div key={`${date}-${day}`}>
-                    <GigItem day={day} date={date} events={eventList} />
-                    <Spacing size={32} />
-                  </div>
-                )
+                <div key={displayMonth}>
+                  <div className={classes.title}>{displayMonth}</div>
+                  <Spacing size={32} />
+                  {groupedEvents &&
+                    keys.map((date) => {
+                      const eventList = groupedEvents[date] ?? null;
+                      const day = eventList ? eventList[0]?.day : "";
+                      return (
+                        eventList && (
+                          <div key={`${date}-${day}`}>
+                            <GigItem day={day} date={date} events={eventList} />
+                            <Spacing size={32} />
+                          </div>
+                        )
+                      );
+                    })}
+                </div>
               );
             })}
         </Grid>
@@ -99,7 +111,12 @@ function Gigs() {
             The aim is to keep this guide as simple as possible. If you have an
             event you think should be listed here, hit the submit button below.
           </div>
-          <a href="mailto:noisesaigon@gmail.com" className={classes.sendEmailBtn}>Send an Email</a>
+          <a
+            href="mailto:noisesaigon@gmail.com"
+            className={classes.sendEmailBtn}
+          >
+            Send an Email
+          </a>
           <Spacing size={16} />
         </Grid>
       </Grid>
