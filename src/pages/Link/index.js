@@ -9,6 +9,7 @@ import {
   SkeletonLoading,
   MetaTags
 } from "components";
+import Bg from "static/images/bg_3.png";
 import { groupLinks, mapLinkGroupDisplay } from "utils";
 import useStyles from "./styles";
 
@@ -42,6 +43,7 @@ function Link() {
     <Container maxWidth="lg">
       <MetaTags />
       <Menu />
+      <img src={Bg} alt="bg" className={classes.bg} />
       <Spacing size={48} />
       <div>
         <div className={classes.section}>A BUNCH OF LINKS</div>

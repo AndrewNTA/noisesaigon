@@ -43,6 +43,9 @@ const useStyles = makeStyles((theme) => ({
       paddingRight: 0,
     },
   },
+  bg: {
+    width: '100%',
+  },
 }));
 
 export default useStyles;
