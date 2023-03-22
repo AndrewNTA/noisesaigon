@@ -10,7 +10,7 @@ import {
   Article,
   MetaTags
 } from "components";
-import Bg from "static/images/bg_2.png";
+import Banner from "static/images/banner.png";
 import useStyles from "./styles";
 
 const ARTICLES_QUERY = gql`
@@ -40,7 +40,7 @@ function Read() {
     <Container maxWidth="lg">
       <MetaTags />
       <Menu />
-      <img src={Bg} alt="bg" className={classes.bg} />
+      <img src={Banner} alt="bg" className={classes.bg} />
       <Spacing size={48} />
       <div className={classes.main}>
         <div className={classes.section}>LATEST READS</div>

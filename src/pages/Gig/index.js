@@ -11,7 +11,7 @@ import {
   SkeletonLoading,
   MetaTags,
 } from "components";
-import Bg from "static/images/bg_3.png";
+import Banner from "static/images/banner.png";
 import {
   genEndDateOfYear,
   genStartDate,
@@ -63,7 +63,7 @@ function Gigs() {
     <Container maxWidth="lg">
       <MetaTags />
       <Menu />
-      <img src={Bg} alt="bg" className={classes.bg} />
+      <img src={Banner} alt="bg" className={classes.bg} />
       <Spacing size={48} />
       <Grid
         container

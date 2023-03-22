@@ -68,14 +68,15 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   menuLogo: {
-    width: "240px",
+    width: "50px",
     height: "50px",
     cursor: "pointer",
-    paddingRight: "4rem",
-    paddingLeft: "0.75rem",
+    paddingRight: "5rem",
+    paddingLeft: "5rem",
     [theme.breakpoints.down("sm")]: {
       paddingRight: 0,
       paddingLeft: 0,
+      paddingBottom: "1rem",
     },
   },
   // menu end
