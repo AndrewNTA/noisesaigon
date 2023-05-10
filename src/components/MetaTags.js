@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 
 const DEFAULT_TITLE = "Noise Saigon";
-const DEFAULT_DESCRIPTION = "live. music.";
+const DEFAULT_DESCRIPTION = "live.music.SaiGon.";
 const DEFAULT_KEY_WORDS = "Music, Events, Saigon, Drums, Festival, Liveshow, Bia, Live, Coffee, Rock, Ho Chi Minh";
 const DEFAULT_THUMBNAIL_URL =
   "https://media.graphassets.com/resize=fit:clip,height:600,width:970/Do1dGjAUTWeFv64ZSMpu";
