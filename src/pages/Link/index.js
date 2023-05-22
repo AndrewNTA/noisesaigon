@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import { Container } from "@mui/material";
-import { useQuery, gql } from "@apollo/client";
+import React, { useEffect } from 'react';
+import { Container } from '@mui/material';
+import { useQuery, gql } from '@apollo/client';
 import {
   Menu,
   Footer,
   Spacing,
   ScrollTopBtn,
   SkeletonLoading,
-  MetaTags
-} from "components";
-import Banner from "static/images/banner.png";
-import { groupLinks, mapLinkGroupDisplay } from "utils";
-import useStyles from "./styles";
+  MetaTags,
+} from 'components';
+import Banner from 'static/images/banner.png';
+import { groupLinks, mapLinkGroupDisplay } from 'utils';
+import useStyles from './styles';
 
 const LINKS_QUERY = gql`
   query Links {
@@ -35,7 +35,7 @@ function Link() {
   useEffect(() => {
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   }, []);
 
@@ -44,6 +44,20 @@ function Link() {
       <MetaTags />
       <Menu />
       <img src={Banner} alt="bg" className={classes.bg} />
+      <Spacing size={24} />
+      <div className="google-map-code">
+        <iframe
+          src="https://maper.app/map-details/HfaEikSjTtW7ETZ27vXB?go=true"
+          width="100%"
+          height="400"
+          frameborder="0"
+          style={{ border: 0 }}
+          allowfullscreen=""
+          aria-hidden="false"
+          tabindex="0"
+          title='map'
+        ></iframe>
+      </div>
       <Spacing size={48} />
       <div>
         <div className={classes.section}>A BUNCH OF LINKS</div>
