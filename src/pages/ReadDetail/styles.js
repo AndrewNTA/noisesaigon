@@ -37,6 +37,13 @@ const useStyles = makeStyles((theme) => ({
       color: "#111",
       fontWeight: 500,
     },
+    '& img': {
+      maxWidth: '100% !important',
+      height: 'auto',
+    },
+    '& h1': {
+      lineHeight: '2rem'
+    },
     [theme.breakpoints.down("sm")]: {
       fontSize: "1rem",
       lineHeight: "1.25rem",
