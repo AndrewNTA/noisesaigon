@@ -1,6 +1,6 @@
-import React, { useMemo, useEffect } from "react";
-import { Container, Grid } from "@mui/material";
-import { useQuery, gql } from "@apollo/client";
+import React, { useMemo, useEffect, useState } from 'react';
+import { Container, Grid } from '@mui/material';
+import { useLazyQuery, gql } from '@apollo/client';
 import {
   Menu,
   Footer,
@@ -10,19 +10,23 @@ import {
   SpotifyIframe,
   SkeletonLoading,
   MetaTags,
-} from "components";
-import Banner from "static/images/banner.png";
+} from 'components';
+import Banner from 'static/images/banner.png';
 import {
   genEndDateOfYear,
   genStartDate,
   groupEventsByDate,
   groupEventsByMonth,
-} from "utils";
-import useStyles from "./styles";
+} from 'utils';
+import useStyles from './styles';
 
 const EVENTS_QUERY = gql`
   query Events($start: DateTime, $end: DateTime) {
-    events(first: 100, orderBy: time_ASC, where: { time_gte: $start, time_lte: $end }) {
+    events(
+      first: 100
+      orderBy: time_ASC
+      where: { time_gte: $start, time_lte: $end }
+    ) {
       id
       extraInfo
       eventName
@@ -38,26 +42,48 @@ const EVENTS_QUERY = gql`
 
 function Gigs() {
   const classes = useStyles();
+  const [events, setEvents] = useState([]);
   const startOfDate = useMemo(genStartDate, []);
   const endOfDate = useMemo(genEndDateOfYear, []);
-  const { data, loading } = useQuery(EVENTS_QUERY, {
-    variables: {
-      start: startOfDate,
-      end: endOfDate,
-    },
-  });
+  const [getEvents, { data, loading }] = useLazyQuery(EVENTS_QUERY);
 
   useEffect(() => {
+    getEvents({
+      variables: {
+        start: startOfDate,
+        end: endOfDate,
+      },
+    });
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const groupedEventsByMonth = groupEventsByMonth(data?.events);
+  useEffect(() => {
+    if (data?.events.length) {
+      const newEvents = [...events, ...data.events];
+      setEvents(newEvents);
+    }
+    if (data?.events.length === 100) {
+      const lastItem = data.events[99];
+      getEvents({
+        variables: {
+          start: lastItem.time,
+          end: endOfDate,
+        },
+      });
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data?.events])
+
+  const groupedEventsByMonth = groupEventsByMonth(events);
   const monthKeys = groupedEventsByMonth
     ? Object.keys(groupedEventsByMonth)
     : [];
+
+  const isLoading = loading && !events.length;
 
   return (
     <Container maxWidth="lg">
@@ -71,11 +97,13 @@ function Gigs() {
         className={classes.main}
       >
         <Grid item xs={12} sm={8}>
-          {loading && <SkeletonLoading length={4} />}
-          {!loading &&
+          {isLoading && <SkeletonLoading length={4} />}
+          {!isLoading &&
             groupedEventsByMonth &&
             monthKeys.map((time) => {
-              const groupedEvents = groupEventsByDate(groupedEventsByMonth[time]);
+              const groupedEvents = groupEventsByDate(
+                groupedEventsByMonth[time]
+              );
               const keys = groupedEvents ? Object.keys(groupedEvents) : [];
               return (
                 <div key={time}>
@@ -84,7 +112,7 @@ function Gigs() {
                   {groupedEvents &&
                     keys.map((date) => {
                       const eventList = groupedEvents[date] ?? null;
-                      const day = eventList ? eventList[0]?.day : "";
+                      const day = eventList ? eventList[0]?.day : '';
                       return (
                         eventList && (
                           <div key={`${date}-${day}`}>
