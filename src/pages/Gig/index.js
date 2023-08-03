@@ -62,6 +62,7 @@ function Gigs() {
   }, []);
 
   useEffect(() => {
+    console.log('debug log ===>', data?.events);
     if (data?.events.length) {
       const newEvents = [...events, ...data.events];
       setEvents(newEvents);
