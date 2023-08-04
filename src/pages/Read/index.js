@@ -15,7 +15,7 @@ import useStyles from "./styles";
 
 const ARTICLES_QUERY = gql`
   query Articles {
-    articles(first: 5, orderBy: publishedAt_DESC) {
+    articles(first: 100, orderBy: publishedAt_DESC) {
       brief
       id
       name
