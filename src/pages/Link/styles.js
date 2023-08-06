@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     fontSize: '1.125rem',
     paddingLeft: '0.75rem',
-    borderLeft: '2px solid rgb(224 32 32)',
+    borderLeft: '2px solid #E02020',
     marginBottom: '2rem',
   },
   link: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#000',
     textDecorationLine: 'none',
     '&:hover': {
-      color: 'rgb(224 32 32)',
+      color: '#E02020',
     },
   },
   text: {

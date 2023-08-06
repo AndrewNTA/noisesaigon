@@ -9,7 +9,7 @@ const useStyles = makeStyles((theme) => ({
     textTransform: "uppercase",
     fontSize: "1.125rem",
     paddingLeft: "0.75rem",
-    borderLeft: "2px solid rgb(224 32 32)",
+    borderLeft: "2px solid #E02020",
     marginBottom: "1.125rem",
     cursor: "pointer",
   },
@@ -48,8 +48,8 @@ const useStyles = makeStyles((theme) => ({
     borderBottom: "2px solid white",
     textAlign: "center",
     "&:hover": {
-      color: "rgb(224 32 32)",
-      borderBottom: "2px solid rgb(224 32 32)",
+      color: "#E02020",
+      borderBottom: "2px solid #E02020",
     },
     [theme.breakpoints.down("md")]: {
       padding: "4px 1.25rem",
@@ -137,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
     color: "#000",
     "&:hover": {
       textDecorationLine: "underline",
-      color: "rgb(224 32 32)",
+      color: "#E02020",
     },
   },
   eventRow: {
@@ -168,7 +168,7 @@ const useStyles = makeStyles((theme) => ({
   },
   eventOptional: {
     marginTop: "0.75rem",
-    backgroundColor: "rgb(254 252 232)",
+    backgroundColor: "#FEFCE8",
     border: "1px solid #000",
     borderRadius: "2px",
     padding: "0.5rem 1rem 0.5rem 1.5rem",
@@ -194,16 +194,16 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     textTransform: "uppercase",
     "&:hover": {
-      border: "2px solid rgb(224 32 32)",
-      color: "rgb(224 32 32)",
+      border: "2px solid #E02020",
+      color: "#E02020",
     },
   },
   // more button end
 
   // footer start
   footerWrapper: {
-    color: "rgb(229 231 235)",
-    backgroundColor: "rgb(0 0 0)",
+    color: "#E5E7EB",
+    backgroundColor: "#000000",
     padding: "3.5rem 2.5rem",
     marginTop: "4rem",
     fontSize: "0.875rem",
@@ -258,13 +258,13 @@ const useStyles = makeStyles((theme) => ({
     fontSize: "1.125rem",
     lineHeight: "1.75rem",
     fontWeight: 600,
-    color: "rgb(224 32 32)",
+    color: "#E02020",
   },
   giDate: {
     fontSize: "2.25rem",
     lineHeight: "2.5rem",
     fontWeight: 600,
-    color: "rgb(0 0 0)",
+    color: "#000000",
   },
   // gig item end
 
