@@ -271,8 +271,8 @@ const useStyles = makeStyles((theme) => ({
   // scroll top button start
   stbWrapper: {
     position: "fixed",
-    bottom: "32px",
-    right: "32px",
+    bottom: "18px",
+    right: "25px",
     padding: "0.5rem",
     borderRadius: "12px",
     backgroundColor: "rgb(224 32 32)",
