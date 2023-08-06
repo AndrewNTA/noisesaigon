@@ -275,7 +275,7 @@ const useStyles = makeStyles((theme) => ({
     right: "25px",
     padding: "0.5rem",
     borderRadius: "12px",
-    backgroundColor: "rgb(224 32 32)",
+    backgroundColor: "#E02020",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
