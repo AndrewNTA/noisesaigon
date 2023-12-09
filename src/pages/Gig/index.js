@@ -13,7 +13,7 @@ import {
 } from 'components';
 import Banner from 'static/images/banner.png';
 import {
-  genEndDateOfYear,
+  genOneYearQuery,
   genStartDate,
   groupEventsByDate,
   groupEventsByMonth,
@@ -44,9 +44,7 @@ function Gigs() {
   const classes = useStyles();
   const [events, setEvents] = useState([]);
   const startOfDate = useMemo(genStartDate, []);
-  const endOfDate = useMemo(genEndDateOfYear, []);
-  console.log('debug log ==>', startOfDate);
-  console.log('debug log 2 ===>', endOfDate);
+  const endOfDate = useMemo(genOneYearQuery, []);
   const [getEvents, { data, loading }] = useLazyQuery(EVENTS_QUERY);
 
   useEffect(() => {

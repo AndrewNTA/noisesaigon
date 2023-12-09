@@ -70,15 +70,15 @@ export const genStartDate = () => {
   return start.toISOString();
 };
 
-// Generate the end date of 30 days to query
+// Generate the end date for 30 days query
 export const genEndDate = () => {
   const now = new Date();
   const end = new Date(new Date().setDate(now.getDate() + 30));
   return end.toISOString();
 };
 
-// Generate the end date of 1 year to query
-export const genEndDateOfYear = () => {
+// Generate the end date for 1 year query
+export const genOneYearQuery = () => {
   const now = new Date();
   const year = now.getFullYear();
   const month = now.getMonth();
