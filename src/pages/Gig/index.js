@@ -45,6 +45,8 @@ function Gigs() {
   const [events, setEvents] = useState([]);
   const startOfDate = useMemo(genStartDate, []);
   const endOfDate = useMemo(genEndDateOfYear, []);
+  console.log('debug log ==>', startOfDate);
+  console.log('debug log 2 ===>', endOfDate);
   const [getEvents, { data, loading }] = useLazyQuery(EVENTS_QUERY);
 
   useEffect(() => {
@@ -62,7 +64,6 @@ function Gigs() {
   }, []);
 
   useEffect(() => {
-    console.log('debug log ===>', data?.events);
     if (data?.events.length) {
       const newEvents = [...events, ...data.events];
       setEvents(newEvents);
