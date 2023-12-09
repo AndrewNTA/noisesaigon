@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Container } from '@mui/material';
-import { useQuery, gql } from '@apollo/client';
+import { useLazyQuery, gql } from '@apollo/client';
 import {
   Menu,
   Footer,
@@ -14,8 +14,8 @@ import { groupLinks, mapLinkGroupDisplay } from 'utils';
 import useStyles from './styles';
 
 const LINKS_QUERY = gql`
-  query Links {
-    links(first: 100) {
+  query Links($skipIdx: Int) {
+    links(first: 100, skip: $skipIdx) {
       id
       name
       description
@@ -27,17 +27,41 @@ const LINKS_QUERY = gql`
 
 function Link() {
   const classes = useStyles();
-  const { data, loading } = useQuery(LINKS_QUERY);
-  const groupedLinks = groupLinks(data?.links);
-
-  const groupKeys = groupedLinks && Object.keys(groupedLinks);
+  const total = useRef(100);
+  const [links, setLinks] = useState([]);
+  const [getLinks, { data, loading }] = useLazyQuery(LINKS_QUERY);
 
   useEffect(() => {
+    getLinks({
+      variables: {
+        skipIdx: 0
+      }
+    });
     window.scrollTo({
       top: 0,
       behavior: 'smooth',
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+
+  useEffect(() => {
+    if (data?.links.length) {
+      const newLinks = [...links, ...data.links];
+      setLinks(newLinks);
+    }
+    if (data?.links.length === 100) {
+      getLinks({
+        variables: {
+          skipIdx: total.current
+        }
+      });
+      total.current = total.current + 100;
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data?.links])
+
+  const groupedLinks = groupLinks(links);
+  const groupKeys = groupedLinks && Object.keys(groupedLinks);
 
   return (
     <Container maxWidth="lg">
