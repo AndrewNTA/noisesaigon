@@ -27,7 +27,7 @@ const ARTICLE_QUERY = gql`
       content {
         html
       }
-      gallery {
+      gallery(first: 30) {
         url(
           transformation: {
             image: { resize: { fit: clip, height: 600, width: 970 } }
