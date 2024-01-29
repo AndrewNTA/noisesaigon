@@ -58,7 +58,7 @@ function Gigs() {
       top: 0,
       behavior: 'smooth',
     });
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -75,8 +75,8 @@ function Gigs() {
         },
       });
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data?.events])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data?.events]);
 
   const groupedEventsByMonth = groupEventsByMonth(events);
   const monthKeys = groupedEventsByMonth
@@ -110,8 +110,9 @@ function Gigs() {
                   <div className={classes.title}>{time}</div>
                   <Spacing size={32} />
                   {groupedEvents &&
-                    keys.map((date) => {
-                      const eventList = groupedEvents[date] ?? null;
+                    keys.map((k) => {
+                      const [, date] = k.split('-');
+                      const eventList = groupedEvents[k] ?? null;
                       const day = eventList ? eventList[0]?.day : '';
                       return (
                         eventList && (

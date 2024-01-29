@@ -136,12 +136,14 @@ export const groupEventsByDate = (events) => {
     const time = events[i].time;
     const d = new Date(time);
     const date = d.getDate();
+    const month = d.getMonth();
     const day = mapDayDisplay(d.getDay());
     const data = { ...events[i], day };
-    if (!result[date]) {
-      result[date] = [data];
+    const key = `${month}-${date}`;
+    if (!result[key]) {
+      result[key] = [data];
     } else {
-      result[date] = [...result[date], data];
+      result[key] = [...result[key], data];
     }
   }
   return result;
