@@ -1,8 +1,7 @@
-import React, { useState } from "react";
-import InfoIcon from "@mui/icons-material/Info";
-import { MoreInfoModal } from "components";
-import { formatPrice, formatDisplayTime } from "utils";
-import useStyles from "./styles";
+import React from 'react';
+import InfoIcon from '@mui/icons-material/Info';
+import { formatPrice, formatDisplayTime } from 'utils';
+import useStyles from './styles';
 
 function Event({
   eventName,
@@ -14,16 +13,7 @@ function Event({
   optionalInfo,
   facebookLink,
 }) {
-  const [isOpen, setIsOpen] = useState(false);
   const classes = useStyles();
-
-  const handleOpenModal = () => {
-    setIsOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsOpen(false);
-  };
 
   return (
     <div className={classes.eventWrapper}>
@@ -46,10 +36,15 @@ function Event({
       </div>
       <div className={classes.eventRow}>
         <div className={classes.eventMoreInfo}>
-          <InfoIcon fontSize="small" sx={{ marginRight: "4px" }} />
-          <div onClick={handleOpenModal} className={classes.eventMoreInfoText}>
+          <InfoIcon fontSize="small" sx={{ marginRight: '4px' }} />
+          <a
+            href={facebookLink}
+            target="_blank"
+            rel="noreferrer"
+            className={classes.eventMoreInfoText}
+          >
             More info
-          </div>
+          </a>
         </div>
         <div className={classes.eventPrice}>{`${formatPrice(price)} vnd`}</div>
       </div>
@@ -59,12 +54,6 @@ function Event({
           <span>{optionalInfo}</span>
         </div>
       )}
-
-      <MoreInfoModal
-        isOpen={isOpen}
-        onClose={handleCloseModal}
-        src={facebookLink}
-      />
     </div>
   );
 }
