@@ -7,6 +7,7 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+// 'https://ap-northeast-1.cdn.hygraph.com/content/cley16yxc0u1801ujc0ttavk8/master'
 const client = new ApolloClient({
   uri: "https://api-ap-northeast-1.hygraph.com/v2/cley16yxc0u1801ujc0ttavk8/master",
   cache: new InMemoryCache(),
