@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
 function SpotifyIframe() {
   return (
     <div>
       <iframe
         title="play-list"
-        style={{ borderRadius: "12px" }}
-        src="https://open.spotify.com/embed/playlist/0wqiCFvlFvhQ2628SuCi9k?si=C8aOHq1pTGWzw4n-cycg8w?utm_source=generator&theme=0"
+        style={{ borderRadius: '12px' }}
+        src="https://open.spotify.com/embed/playlist/4vwLVjilj4mSyVbjCuggrl?si=Gq9DfBZPS86XVekAmUvJ8w&pi=faGSWphuTDOiO?utm_source=generator&theme=0"
         width="100%"
         height="152"
         frameBorder="0"
