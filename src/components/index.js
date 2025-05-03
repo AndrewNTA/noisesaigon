@@ -8,7 +8,6 @@ import GigItem from "./GigItem";
 import ScrollTopBtn from "./ScrollTopBtn";
 import SpotifyIframe from "./SpotifyIframe";
 import SkeletonLoading from "./SkeletonLoading";
-import MoreInfoModal from "./MoreInfoModal";
 import SkeletonReadLoading from "./SkeletonReadLoading";
 import MetaTags from "./MetaTags";
 
@@ -24,6 +23,5 @@ export {
   ScrollTopBtn,
   SpotifyIframe,
   SkeletonLoading,
-  MoreInfoModal,
   SkeletonReadLoading
 };
