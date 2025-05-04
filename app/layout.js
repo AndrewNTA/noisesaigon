@@ -1,18 +1,20 @@
-import { Inter } from 'next/font/google'
-import { ApolloProviderWrapper } from './providers/apollo-provider'
-import { Providers } from './providers'
-import { ThemeProvider } from './providers/theme-provider'
-import Script from 'next/script'
-import './globals.css'
+import { Inter } from 'next/font/google';
+import { ApolloProviderWrapper } from './providers/apollo-provider';
+import { Providers } from './providers';
+import { ThemeProvider } from './providers/theme-provider';
+import Script from 'next/script';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
   title: 'Noise SaiGon',
-  description: 'Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
+  description:
+    'Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
   openGraph: {
     title: 'Noise SaiGon - Live Music in SaiGon',
-    description: 'live.music.SaiGon. Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
+    description:
+      'live.music.SaiGon. Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
     url: 'https://noisesaigon.com',
     siteName: 'Noise SaiGon',
     images: [
@@ -29,10 +31,14 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Noise SaiGon - Live Music in SaiGon',
-    description: 'live.music.SaiGon. Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
-    images: ['https://media.graphassets.com/resize=fit:clip,height:600,width:970/Do1dGjAUTWeFv64ZSMpu'],
+    description:
+      'live.music.SaiGon. Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
+    images: [
+      'https://media.graphassets.com/resize=fit:clip,height:600,width:970/Do1dGjAUTWeFv64ZSMpu',
+    ],
   },
-  keywords: 'Music, Events, SaiGon, Drums, Festival, Liveshow, Bia, Live, Coffee, Rock, Ho Chi Minh',
+  keywords:
+    'Music, Events, SaiGon, Drums, Festival, Liveshow, Bia, Live, Coffee, Rock, Ho Chi Minh',
   icons: {
     icon: '/favicon.png',
     apple: '/logo192.png',
@@ -41,13 +47,13 @@ export const metadata = {
   verification: {
     google: 'ZXOKCtk7cQLJjdU_Msk6v7kVMa-LJEZ2PZc4mDw9zsY',
   },
-}
+};
 
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
   themeColor: '#000000',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -59,17 +65,7 @@ export default function RootLayout({ children }) {
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
-      </head>
-      <body className={inter.className}>
-        <Script id="google-tag-manager" strategy="afterInteractive">
-          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-KXQQ6XC7');`}
-        </Script>
-        <Script
-          id="buy-me-coffee"
+        <script
           data-name="BMC-Widget"
           data-cfasync="false"
           src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
@@ -80,20 +76,30 @@ export default function RootLayout({ children }) {
           data-position="Right"
           data-x_margin="18"
           data-y_margin="76"
-          strategy="afterInteractive"
-        />
+        ></script>
+      </head>
+      <body className={inter.className}>
+        <Script id="google-tag-manager" strategy="afterInteractive">
+          {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KXQQ6XC7');`}
+        </Script>
         <noscript>
-          <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXQQ6XC7"
-            height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-KXQQ6XC7"
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          ></iframe>
         </noscript>
         <ThemeProvider>
           <ApolloProviderWrapper>
-            <Providers>
-              {children}
-            </Providers>
+            <Providers>{children}</Providers>
           </ApolloProviderWrapper>
         </ThemeProvider>
       </body>
     </html>
-  )
-} 
+  );
+}
