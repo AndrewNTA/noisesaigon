@@ -213,7 +213,7 @@ function Home() {
               <Spacing size={24} />
               <HomeLeftSpacing>
                 At its heart is a simple, no-nonsense gig guide that does
-                exactly what it says on the tin. We'll also try to publish a bit
+                exactly what it says on the tin. We&apos;ll also try to publish a bit
                 of writing, gig reviews, music reviews and opinion pieces and
                 the like. If you have an event that you would like to promote,
                 or an article you want published, send us an email!
