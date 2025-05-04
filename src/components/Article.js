@@ -1,23 +1,39 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
+import { styled } from "@mui/material/styles";
 import { Spacing } from "components";
-import useStyles from "./styles";
+
+const ArticleContainer = styled('div')({
+  '& .title': {
+    fontSize: '1.2rem',
+    fontWeight: 'bold',
+    cursor: 'pointer',
+    '&:hover': {
+      color: '#1976d2',
+    },
+  },
+  '& .content': {
+    fontSize: '1rem',
+    color: 'rgba(0, 0, 0, 0.6)',
+    marginTop: '8px',
+  },
+});
 
 function Article({ title, content, id }) {
-  const classes = useStyles();
-  const navigate = useNavigate();
+  const router = useRouter();
+  
   const goToReadDetail = () => {
-    navigate(`/reads/${id}`);
+    router.push(`/reads/${id}`);
   };
 
   return (
-    <div id={id}>
-      <div className={classes.aTitle} onClick={goToReadDetail}>
+    <ArticleContainer id={id}>
+      <div className="title" onClick={goToReadDetail}>
         {title}
       </div>
-      <div className={classes.aContent}>{content}</div>
+      <div className="content">{content}</div>
       <Spacing size={32} />
-    </div>
+    </ArticleContainer>
   );
 }
 

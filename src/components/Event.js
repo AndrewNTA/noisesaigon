@@ -1,7 +1,82 @@
 import React from 'react';
 import InfoIcon from '@mui/icons-material/Info';
+import { styled } from '@mui/material/styles';
 import { formatPrice, formatDisplayTime } from 'utils';
-import useStyles from './styles';
+
+const EventWrapper = styled('div')({
+  padding: '16px',
+  borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
+});
+
+const EventName = styled('div')({
+  fontSize: '1.2rem',
+  fontWeight: 'bold',
+  marginBottom: '8px',
+});
+
+const EventExtraInfo = styled('div')({
+  fontSize: '0.9rem',
+  color: 'rgba(0, 0, 0, 0.6)',
+  marginBottom: '8px',
+});
+
+const EventInfo = styled('div')({
+  display: 'flex',
+  gap: '16px',
+  marginBottom: '8px',
+});
+
+const EventTime = styled('div')({
+  color: 'rgba(0, 0, 0, 0.6)',
+});
+
+const EventVenue = styled('div')({
+  color: 'rgba(0, 0, 0, 0.6)',
+});
+
+const EventVenueLink = styled('a')({
+  color: 'rgba(0, 0, 0, 0.6)',
+  textDecoration: 'none',
+  '&:hover': {
+    color: '#1976d2',
+  },
+});
+
+const EventRow = styled('div')({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  marginBottom: '8px',
+});
+
+const EventMoreInfo = styled('div')({
+  display: 'flex',
+  alignItems: 'center',
+  color: 'rgba(0, 0, 0, 0.6)',
+});
+
+const EventMoreInfoText = styled('a')({
+  color: 'rgba(0, 0, 0, 0.6)',
+  textDecoration: 'none',
+  '&:hover': {
+    color: '#1976d2',
+  },
+});
+
+const EventPrice = styled('div')({
+  color: 'rgba(0, 0, 0, 0.6)',
+});
+
+const EventOptional = styled('div')({
+  display: 'flex',
+  gap: '8px',
+  fontSize: '0.9rem',
+  color: 'rgba(0, 0, 0, 0.6)',
+});
+
+const EventOptionalIcon = styled('div')({
+  fontWeight: 'bold',
+});
 
 function Event({
   eventName,
@@ -13,48 +88,44 @@ function Event({
   optionalInfo,
   facebookLink,
 }) {
-  const classes = useStyles();
-
   return (
-    <div className={classes.eventWrapper}>
-      <div className={classes.eventName}>{eventName}</div>
-      <div className={classes.eventExtraInfo}>{extraInfo}</div>
-      <div className={classes.eventInfo}>
-        <div className={classes.eventTime}>{formatDisplayTime(time)}</div>
+    <EventWrapper>
+      <EventName>{eventName}</EventName>
+      <EventExtraInfo>{extraInfo}</EventExtraInfo>
+      <EventInfo>
+        <EventTime>{formatDisplayTime(time)}</EventTime>
         {venueLink ? (
-          <a
+          <EventVenueLink
             href={venueLink}
             target="_blank"
             rel="noreferrer"
-            className={classes.eventVenueLink}
           >
             {venueName}
-          </a>
+          </EventVenueLink>
         ) : (
-          <div className={classes.eventVenue}>{venueName}</div>
+          <EventVenue>{venueName}</EventVenue>
         )}
-      </div>
-      <div className={classes.eventRow}>
-        <div className={classes.eventMoreInfo}>
+      </EventInfo>
+      <EventRow>
+        <EventMoreInfo>
           <InfoIcon fontSize="small" sx={{ marginRight: '4px' }} />
-          <a
+          <EventMoreInfoText
             href={facebookLink}
             target="_blank"
             rel="noreferrer"
-            className={classes.eventMoreInfoText}
           >
             More info
-          </a>
-        </div>
-        <div className={classes.eventPrice}>{`${formatPrice(price)} vnd`}</div>
-      </div>
+          </EventMoreInfoText>
+        </EventMoreInfo>
+        <EventPrice>{`${formatPrice(price)} vnd`}</EventPrice>
+      </EventRow>
       {optionalInfo && (
-        <div className={classes.eventOptional}>
-          <div className={classes.eventOptionalIcon}>NB:</div>
+        <EventOptional>
+          <EventOptionalIcon>NB:</EventOptionalIcon>
           <span>{optionalInfo}</span>
-        </div>
+        </EventOptional>
       )}
-    </div>
+    </EventWrapper>
   );
 }
 
