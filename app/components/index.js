@@ -9,6 +9,7 @@ import ScrollTopBtn from './ScrollTopBtn';
 import SpotifyIframe from './SpotifyIframe';
 import SkeletonLoading from './SkeletonLoading';
 import SkeletonReadLoading from './SkeletonReadLoading';
+import Banner from './Banner';
 
 export {
   Spacing,
@@ -22,4 +23,5 @@ export {
   SpotifyIframe,
   SkeletonLoading,
   SkeletonReadLoading,
+  Banner,
 };
