@@ -68,6 +68,20 @@ export default function RootLayout({ children }) {
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-KXQQ6XC7');`}
         </Script>
+        <Script
+          id="buy-me-coffee"
+          data-name="BMC-Widget"
+          data-cfasync="false"
+          src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js"
+          data-id="noisesaigon"
+          data-description="Support me on Buy me a coffee!"
+          data-message="Thanks for visiting! You can now buy us a coffee!"
+          data-color="#FF5F5F"
+          data-position="Right"
+          data-x_margin="18"
+          data-y_margin="76"
+          strategy="afterInteractive"
+        />
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KXQQ6XC7"
             height="0" width="0" style={{ display: 'none', visibility: 'hidden' }}></iframe>
