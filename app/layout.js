@@ -8,21 +8,21 @@ import './globals.css';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata = {
-  title: 'Noise SaiGon',
+  title: 'Noise Saigon',
   description:
-    'Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
+    'Discover live music events, gigs, and the latest reads about the Saigon music scene.',
   openGraph: {
-    title: 'Noise SaiGon - Live Music in SaiGon',
+    title: 'Noise Saigon - Live Music in Saigon',
     description:
-      'live.music.SaiGon. Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
+      'live.music.Saigon. Discover live music events, gigs, and the latest reads about the Saigon music scene.',
     url: 'https://noisesaigon.com',
-    siteName: 'Noise SaiGon',
+    siteName: 'Noise Saigon',
     images: [
       {
         url: 'https://media.graphassets.com/resize=fit:clip,height:600,width:970/Do1dGjAUTWeFv64ZSMpu',
         width: 1200,
         height: 630,
-        alt: 'Noise SaiGon',
+        alt: 'Noise Saigon',
       },
     ],
     locale: 'en_US',
@@ -30,15 +30,15 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Noise SaiGon - Live Music in SaiGon',
+    title: 'Noise Saigon - Live Music in Saigon',
     description:
-      'live.music.SaiGon. Discover live music events, gigs, and the latest reads about the SaiGon music scene.',
+      'live.music.Saigon. Discover live music events, gigs, and the latest reads about the Saigon music scene.',
     images: [
       'https://media.graphassets.com/resize=fit:clip,height:600,width:970/Do1dGjAUTWeFv64ZSMpu',
     ],
   },
   keywords:
-    'Music, Events, SaiGon, Drums, Festival, Liveshow, Bia, Live, Coffee, Rock, Ho Chi Minh',
+    'Music, Events, Saigon, Drums, Festival, Liveshow, Bia, Live, Coffee, Rock, Ho Chi Minh',
   icons: {
     icon: '/favicon.png',
     apple: '/logo192.png',
