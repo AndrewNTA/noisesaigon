@@ -17,6 +17,7 @@ export const metadata = {
       'live.music.Saigon. Discover live music events, gigs, and the latest reads about the Saigon music scene.',
     url: 'https://noisesaigon.com',
     siteName: 'Noise Saigon',
+    type: 'website',
     images: [
       {
         url: 'https://media.graphassets.com/resize=fit:clip,height:600,width:970/Do1dGjAUTWeFv64ZSMpu',
@@ -26,7 +27,9 @@ export const metadata = {
       },
     ],
     locale: 'en_US',
-    type: 'website',
+  },
+  facebook: {
+    appId: '740663848288837',
   },
   twitter: {
     card: 'summary_large_image',
@@ -62,6 +65,12 @@ export default function RootLayout({ children }) {
         <meta charSet="utf-8" />
         <meta name="article:tag" content={metadata.keywords} />
         <meta name="news_keywords" content={metadata.keywords} />
+        <meta
+          property="og:url"
+          itemprop="url"
+          content="https://www.noisesaigon.com/"
+        />
+        <meta property="og:type" itemprop="type" content="website" />
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />
