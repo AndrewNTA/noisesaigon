@@ -1,7 +1,7 @@
 import React from 'react';
 import InfoIcon from '@mui/icons-material/Info';
 import { styled } from '@mui/material';
-import { formatPrice, formatDisplayTime } from '../utils';
+import { formatPrice, formatDisplayTime } from '@/utils';
 
 const EventWrapper = styled('div')({
   marginBottom: '16px',

@@ -15,9 +15,9 @@ import {
   ScrollTopBtn,
   SpotifyIframe,
   SkeletonLoading,
-} from './components';
-import { months } from './constants';
-import { genEndDate, genStartDate, groupEventsByDate } from './utils';
+} from '@/components';
+import { months } from '@/constants';
+import { genEndDate, genStartDate, groupEventsByDate } from '@/utils';
 import BannerSrc from '@/static/images/banner-home.jpg';
 
 const HomeMain = styled('div')(({ theme }) => ({

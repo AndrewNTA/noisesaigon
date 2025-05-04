@@ -2,7 +2,7 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { styled } from '@mui/material';
-import Logo from '../static/images/logo.png';
+import Logo from '@/static/images/logo.png';
 
 const MenuWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
