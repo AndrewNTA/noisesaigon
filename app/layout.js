@@ -67,10 +67,10 @@ export default function RootLayout({ children }) {
         <meta name="news_keywords" content={metadata.keywords} />
         <meta
           property="og:url"
-          itemprop="url"
+          itemProp="url"
           content="https://www.noisesaigon.com/"
         />
-        <meta property="og:type" itemprop="type" content="website" />
+        <meta property="og:type" itemProp="type" content="website" />
         <link rel="icon" href="/favicon.png" sizes="any" />
         <link rel="apple-touch-icon" href="/logo192.png" />
         <link rel="manifest" href="/manifest.json" />

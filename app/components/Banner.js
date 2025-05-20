@@ -9,5 +9,5 @@ const ImageBanner = styled(Image)({
 });
 
 export default function Banner() {
-  return <ImageBanner src={BannerSrc} alt="bg" />;
+  return <ImageBanner src={BannerSrc} alt="bg" width={970} height={600} />;
 }

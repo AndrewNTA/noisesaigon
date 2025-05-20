@@ -18,7 +18,7 @@ import {
 } from '@/components';
 import { months } from '@/constants';
 import { genEndDate, genStartDate, groupEventsByDate } from '@/utils';
-import BannerSrc from '@/static/images/banner-home.jpg';
+import BannerSrc from './static/images/banner-home.jpg';
 
 const HomeMain = styled('div')(({ theme }) => ({
   padding: '1.25rem',
