@@ -13,7 +13,8 @@
     "next": "^14.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-image-gallery": "^1.2.11"
+    "react-image-gallery": "^1.2.11",
+    "sharp": "^0.34.2"
   },
   "scripts": {
     "dev": "next dev",
@@ -40,8 +41,8 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.17",
-    "postcss": "^8.4.35",
     "eslint": "^8.56.0",
-    "eslint-config-next": "^14.1.0"
+    "eslint-config-next": "^14.1.0",
+    "postcss": "^8.4.35"
   }
 }
