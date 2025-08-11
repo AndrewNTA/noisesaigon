@@ -6,7 +6,7 @@ function SpotifyIframe() {
       <iframe
         title="play-list"
         style={{ borderRadius: '12px' }}
-        src="https://open.spotify.com/embed/playlist/2yzLRjB2PRRpS8vZo0d9K0?si=5B8lrrGWTYyAxUlsCOzgYQ&pi=faGSWphuTDOiO?utm_source=generator&theme=0"
+        src="https://open.spotify.com/embed/playlist/4TcjjsoKKkotkxbDCUxqgf?si=35AtBQWOQduTSy-3FTjg1Q&pi=faGSWphuTDOiO?utm_source=generator&theme=0"
         width="100%"
         height="152"
         frameBorder="0"
