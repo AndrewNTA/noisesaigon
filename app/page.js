@@ -1,4 +1,4 @@
-'use client'
+'use client';
 
 import React, { useCallback, useMemo, useEffect } from 'react';
 import { Container, Grid, styled } from '@mui/material';
@@ -18,7 +18,6 @@ import {
 } from '@/components';
 import { months } from '@/constants';
 import { genEndDate, genStartDate, groupEventsByDate } from '@/utils';
-import BannerSrc from './static/images/banner-home.jpg';
 
 const HomeMain = styled('div')(({ theme }) => ({
   padding: '1.25rem',
@@ -131,7 +130,13 @@ function Home() {
   return (
     <Container maxWidth="lg">
       <Menu />
-      <Image src={BannerSrc} alt="banner" width={970} height={600} style={{ width: '100%', height: 'auto' }} />
+      <Image
+        src="/images/banner-home.jpg"
+        alt="banner"
+        width={970}
+        height={600}
+        style={{ width: '100%', height: 'auto' }}
+      />
       <HomeMain>
         <Spacing size={32} />
         <Grid container spacing={4}>
@@ -213,10 +218,10 @@ function Home() {
               <Spacing size={24} />
               <HomeLeftSpacing>
                 At its heart is a simple, no-nonsense gig guide that does
-                exactly what it says on the tin. We&apos;ll also try to publish a bit
-                of writing, gig reviews, music reviews and opinion pieces and
-                the like. If you have an event that you would like to promote,
-                or an article you want published, send us an email!
+                exactly what it says on the tin. We&apos;ll also try to publish
+                a bit of writing, gig reviews, music reviews and opinion pieces
+                and the like. If you have an event that you would like to
+                promote, or an article you want published, send us an email!
               </HomeLeftSpacing>
             </HomeEventContent>
           </Grid>

@@ -2,7 +2,6 @@ import React from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { styled } from '@mui/material';
-import Logo from '@/static/images/logo.png';
 
 const MenuWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
@@ -72,7 +71,7 @@ function Menu() {
   return (
     <MenuWrapper>
       <MenuLogoWrapper onClick={() => router.push('/')}>
-        <MenuLogo src={Logo} alt="noisesaigon" width={50} height={50} />
+        <MenuLogo src="/images/logo.png" alt="noisesaigon" width={50} height={50} />
       </MenuLogoWrapper>
       <MenuItemGroup>
         <MenuItem onClick={() => router.push('/gigs')}>Gigs</MenuItem>

@@ -2,7 +2,6 @@
 
 import { styled } from '@mui/material';
 import Image from 'next/image';
-import NotFoundImage from './static/images/not-found.png';
 import { useRouter } from 'next/navigation';
 const Container = styled('div')(() => ({
   width: '100%',
@@ -49,7 +48,7 @@ export default function NotFound() {
   return (
     <Container>
       <NotFoundImg
-        src={NotFoundImage}
+        src="/images/not-found.png"
         alt="Not Found"
         width={600}
         height={400}
