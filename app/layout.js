@@ -1,6 +1,5 @@
 import { Inter } from 'next/font/google';
 import { ApolloProviderWrapper } from './providers/apollo-provider';
-import { Providers } from './providers';
 import { ThemeProvider } from './providers/theme-provider';
 import Script from 'next/script';
 import './globals.css';
@@ -105,7 +104,7 @@ export default function RootLayout({ children }) {
         </noscript>
         <ThemeProvider>
           <ApolloProviderWrapper>
-            <Providers>{children}</Providers>
+            {children}
           </ApolloProviderWrapper>
         </ThemeProvider>
       </body>
