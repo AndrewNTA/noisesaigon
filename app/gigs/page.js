@@ -129,8 +129,8 @@ function Gigs() {
 
   return (
     <Container maxWidth="lg">
-      <Menu />
       <Banner pageType={'gigsPage'}/>
+      <Menu />
       <Spacing size={48} />
       <MainGrid container columnSpacing={{ xs: 2, sm: 2, md: 12 }}>
         <Grid item xs={12} sm={8}>

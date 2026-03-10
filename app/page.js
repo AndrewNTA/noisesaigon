@@ -129,8 +129,8 @@ function Home() {
 
   return (
     <Container maxWidth="lg">
+      <Banner isHomepage={true} pageType={'homePage'} />
       <Menu />
-      <Banner isHomepage={true} />
       <HomeMain>
         <Spacing size={32} />
         <Grid container spacing={4}>

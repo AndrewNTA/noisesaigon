@@ -7,11 +7,8 @@ const MenuWrapper = styled('div')(({ theme }) => ({
   display: 'flex',
   alignItems: 'center',
   paddingBottom: '12px',
-  paddingTop: '4rem',
-  [theme.breakpoints.down('sm')]: {
-    display: 'block',
-    paddingTop: '12px',
-  },
+  paddingTop: '12px',
+  borderBottom: '1px solid #000',
 }));
 
 const MenuLogoWrapper = styled('div')(({ theme }) => ({
@@ -27,9 +24,10 @@ const MenuLogo = styled(Image)(({ theme }) => ({
   paddingRight: '5rem',
   paddingLeft: '5rem',
   [theme.breakpoints.down('sm')]: {
-    paddingRight: 0,
-    paddingLeft: 0,
-    paddingBottom: '1rem',
+    width: '30px',
+    height: '30px',
+    paddingRight: '36px',
+    paddingLeft: '16px',
   },
 }));
 
@@ -58,7 +56,7 @@ const MenuItem = styled('div')(({ theme }) => ({
     width: '4rem',
   },
   [theme.breakpoints.down('sm')]: {
-    fontSize: '1.125rem',
+    fontSize: '1rem',
     lineHeight: '1.75rem',
     width: 'unset',
     padding: '4px 0',
@@ -71,7 +69,12 @@ function Menu() {
   return (
     <MenuWrapper>
       <MenuLogoWrapper onClick={() => router.push('/')}>
-        <MenuLogo src="/images/logo.png" alt="noisesaigon" width={50} height={50} />
+        <MenuLogo
+          src="/images/logo.png"
+          alt="noisesaigon"
+          width={50}
+          height={50}
+        />
       </MenuLogoWrapper>
       <MenuItemGroup>
         <MenuItem onClick={() => router.push('/gigs')}>Gigs</MenuItem>
