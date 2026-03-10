@@ -55,7 +55,7 @@ function Read() {
   return (
     <Container maxWidth="lg">
       <Menu />
-      <Banner />
+      <Banner pageType={'readsPage'} />
       <Spacing size={48} />
       <ReadMain>
         <ReadSection>LATEST READS</ReadSection>

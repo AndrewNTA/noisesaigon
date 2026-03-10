@@ -111,7 +111,7 @@ function Link() {
   return (
     <Container maxWidth="lg">
       <Menu />
-      <Banner />
+      <Banner pageType={'linksPage'}/>
       <Spacing size={24} />
       <div className="google-map-code">
         <iframe

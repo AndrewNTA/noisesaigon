@@ -2,7 +2,6 @@
 
 import React, { useCallback, useMemo, useEffect } from 'react';
 import { Container, Grid, styled } from '@mui/material';
-import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import { useQuery, gql } from '@apollo/client';
 import {
@@ -15,6 +14,7 @@ import {
   ScrollTopBtn,
   SpotifyIframe,
   SkeletonLoading,
+  Banner,
 } from '@/components';
 import { months } from '@/constants';
 import { genEndDate, genStartDate, groupEventsByDate } from '@/utils';
@@ -130,13 +130,7 @@ function Home() {
   return (
     <Container maxWidth="lg">
       <Menu />
-      <Image
-        src="/images/banner-home.jpg"
-        alt="banner"
-        width={970}
-        height={600}
-        style={{ width: '100%', height: 'auto' }}
-      />
+      <Banner isHomepage={true} />
       <HomeMain>
         <Spacing size={32} />
         <Grid container spacing={4}>
