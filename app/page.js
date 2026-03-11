@@ -129,8 +129,8 @@ function Home() {
 
   return (
     <Container maxWidth="lg">
-      <Banner isHomepage={true} pageType={'homePage'} />
       <Menu />
+      <Banner isHomepage={true} pageType={'homePage'} />
       <HomeMain>
         <Spacing size={32} />
         <Grid container spacing={4}>
@@ -145,8 +145,8 @@ function Home() {
                   parseInt(date) === currentDate
                     ? 'today'
                     : parseInt(date) === currentDate + 1
-                    ? 'tomorrow'
-                    : '';
+                      ? 'tomorrow'
+                      : '';
                 return (
                   <div key={k}>
                     <HomeEventDate>
