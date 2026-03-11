@@ -8,7 +8,6 @@ const MenuWrapper = styled('div')(({ theme }) => ({
   alignItems: 'center',
   paddingBottom: '12px',
   paddingTop: '12px',
-  borderBottom: '1px solid #000',
 }));
 
 const MenuLogoWrapper = styled('div')(({ theme }) => ({
